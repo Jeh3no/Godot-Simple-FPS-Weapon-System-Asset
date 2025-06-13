@@ -90,7 +90,6 @@ var canReload : bool = true
 @export_group("Sway variables")
 @export_range(0.0, 5.0, 0.01) var swayRotSpeed : float = 0.0
 @export_range(0.0, 1.0, 0.001) var swayRotAmount : float = 0.0
-@export var invertWeaponSway : bool = true
 
 @export_group("Bob variables")
 var bobPos : Array[Vector3]

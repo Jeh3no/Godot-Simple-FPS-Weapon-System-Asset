@@ -6,29 +6,46 @@ var pointOfCollision : Vector3 = Vector3.ZERO
 @onready var weapM : Node3D = %WeaponManager #weapon manager
 
 func getCurrentWeapon(currWeap):
+	#get current weapon resources
 	cW = currWeap
 	
 func shoot():
-	#si l'arme a des munitions dans son chargeur, et n'est pas en train de recharger
-	if cW.canShoot and ((cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime) or (cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0)) and cW.canReload:
+	if cW.canShoot and (
+	#magazine isn't empty, and has >= ammo than the number of projectiles required for a shot
+	(cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime)
+	or 
+	#has all ammos in the magazine, and number of ammo is positive
+	(cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0 and
+	#has >= ammo than the number of projectiles required for a shot
+	weapM.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime)
+	) and cW.canReload:
 		cW.canShoot = false
 		
+		#number of successive shots (for example if 3, the weapon will shot 3 times in a row)
 		for i in range(cW.nbProjShots):
-			if ((cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime) or (cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0)):
+			#same conditions has before, are checked before every shot
+			if ((cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime) 
+			or (cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0) and 
+			weapM.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime):
 				
 				weapM.weaponSoundManagement(cW.shootSound, cW.shootSoundSpeed)
 				
 				if cW.shootAnimName != "":
 					weapM.animManager.playModelAnimation("ShootAnim%s" % cW.weaponName, cW.shootAnimSpeed, true)
 				else:
-					print("%s doesn't have a shoto animation" % cW.weaponName)
+					print("%s doesn't have a shoot animation" % cW.weaponName)
 					
+				#number projectiles shots at the same time (for example, 
+				#a shotgun shell is constituted of ~ 20 pellets that are spread across the target, 
+				#so 20 projectiles shots at the same time)
 				for j in range(0, cW.nbProjShotsAtSameTime):
-					if cW.allAmmoInMag: weapM.ammoManager.ammoDict[cW.ammoType] -= 1 #for doom like weapons
+					if cW.allAmmoInMag: weapM.ammoManager.ammoDict[cW.ammoType] -= 1
 					else: cW.totalAmmoInMag -= 1
 						
+					#get the collision point
 					pointOfCollision = getCameraPOV()
-											
+					
+					#call the fonction corresponding to the selected type
 					if cW.type == cW.types.HITSCAN: hitscanShot(pointOfCollision)
 					elif cW.type == cW.types.PROJECTILE: projectileShot(pointOfCollision)
 					
@@ -109,7 +126,7 @@ func hitscanShot(pointOfCollisionHitscan : Vector3):
 		
 		elif collider.is_in_group("HitableObjects") and collider.has_method("hitscanHit"): 
 			finalDamage = cW.damagePerProj * cW.damageDropoff.sample(pointOfCollisionHitscan.distance_to(global_position) / cW.maxRange)
-			collider.hitscanHit(finalDamage/6, hitscanBulletDirection, hitscanBulletCollision.position)
+			collider.hitscanHit(finalDamage/6.0, hitscanBulletDirection, hitscanBulletCollision.position)
 			weapM.displayBulletHole(colliderPoint, colliderNormal)
 			
 		else:

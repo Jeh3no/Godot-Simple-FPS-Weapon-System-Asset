@@ -12,11 +12,11 @@ var bodiesList : Array = []
 @onready var hitbox = $Hitbox
 
 @export_group("Sound variables")
-@onready var audioManager : PackedScene = preload("res://Scenes/AudioManagerScene.tscn")
+@onready var audioManager : PackedScene = preload("res://Misc/Scenes/AudioManagerScene.tscn")
 @export var explosionSound : AudioStream
 
 @export_group("Particles variables")
-@onready var particlesManager : PackedScene = preload("res://Scenes/ParticlesManagerScene.tscn")
+@onready var particlesManager : PackedScene = preload("res://Misc/Scenes/ParticlesManagerScene.tscn")
 
 func _process(delta):
 	if timeBeforeVanish > 0.0: timeBeforeVanish -= delta
@@ -28,7 +28,7 @@ func _on_body_entered(body):
 
 func hit():
 	mesh.visible = false
-	hitbox.call_deferred("disabled", true)
+	hitbox.set_deferred("disabled", true)
 	
 	if isExplosive: explode()
 
@@ -36,18 +36,21 @@ func applyDamage(body):
 	if body.is_in_group("Enemies") and body.has_method("projectileHit"):
 			body.projectileHit(damage, direction)
 			
-	if body.is_in_group("HitableObjects") and body.has_method("projectilHit"):
+	if body.is_in_group("HitableObjects") and body.has_method("projectileHit"):
 		body.projectileHit(damage, direction)
 	
 func explode():
+	#this function is visual and audio only, it doesn't affect the gameplay
 	weaponSoundManagement(explosionSound)
 	
-	var particlesIns
+	var particlesIns : ParticlesManager
 	if particlesIns == null:
 		particlesIns = particlesManager.instantiate()
-		particlesIns.particleToEmit ="Explosion"
+		particlesIns.particleToEmit = "Explosion"
 		particlesIns.global_transform = global_transform
-		get_tree().get_root().add_child(particlesIns)
+		get_tree().get_root().add_child.call_deferred(particlesIns)
+	else:
+		print("Projectile already has emit explosion particles")
 		
 	queue_free()
 	

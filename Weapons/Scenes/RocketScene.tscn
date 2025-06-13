@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://u4tj3ey6tjg8"]
 
 [ext_resource type="Script" uid="uid://bysswu6cmi0t4" path="res://Weapons/Scripts/ProjectileScript.gd" id="1_8y6e4"]
-[ext_resource type="Texture2D" uid="uid://dq6lmmv7chko6" path="res://Arts/Gun Textures/atlass_1_diffuse.png" id="4_6ks7i"]
+[ext_resource type="Texture2D" uid="uid://dq6lmmv7chko6" path="res://Weapons/Textures/atlass_1_diffuse.png" id="4_6ks7i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jevsj"]
 bounce = 1.0

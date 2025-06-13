@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://pjv5ptit5tvg"]
 
-[ext_resource type="Script" uid="uid://bp4miwy6defwl" path="res://Weapons/Scripts/AmmoRefillerScript.gd" id="1_bsrep"]
-[ext_resource type="PackedScene" uid="uid://b5tg1xlsqy48x" path="res://Arts/Models/Ammunition models/german_army_mg43_ammo_box/scene.gltf" id="2_ghsh0"]
+[ext_resource type="Script" uid="uid://bp4miwy6defwl" path="res://Weapons/Scripts/Ammunition/AmmoRefillerScript.gd" id="1_bsrep"]
+[ext_resource type="PackedScene" uid="uid://cyxdexqmowyvh" path="res://Weapons/Models/AmmunitionBox/ammobox_low.glb" id="2_8nqyo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vfsrg"]
 size = Vector3(0.974533, 0.752262, 1.42589)
@@ -26,7 +26,7 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0385975, 0.274414, -0.0104526)
 shape = SubResource("BoxShape3D_diulm")
 
-[node name="Model" parent="." instance=ExtResource("2_ghsh0")]
-transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
+[node name="Model" parent="." instance=ExtResource("2_8nqyo")]
+transform = Transform3D(-2.84124e-07, 0, 6.5, 0, 6.5, 0, -6.5, 0, -2.84124e-07, 0, -0.0915464, 0)
 
 [connection signal="area_entered" from="DetectArea" to="." method="_on_detect_area_area_entered"]

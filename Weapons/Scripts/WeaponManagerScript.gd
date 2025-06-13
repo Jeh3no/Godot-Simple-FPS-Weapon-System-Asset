@@ -2,8 +2,8 @@ extends Node3D
 
 var weaponStack : Array[int] = [] #weapons current wielded by play char
 var weaponList : Dictionary = {} #all weapons available in the game (key = weapon name, value = wepakn resource)
-@export var weaponResources : Array[WeaponResource] 
-@export var startWeapons : Array[WeaponSlot]
+@export var weaponResources : Array[WeaponResource] #all weapon resources files
+@export var startWeapons : Array[WeaponSlot] #the weapon the player character will start with
 
 var cW = null #current weapon
 var cWM = null #current weapon model
@@ -34,11 +34,10 @@ var rng = RandomNumberGenerator.new()
 @onready var ammoManager : Node3D = %AmmunitionManager
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 @onready var animManager : Node3D = %AnimationManager
-@onready var audioManager : PackedScene = preload("res://Scenes/AudioManagerScene.tscn")
-@onready var bulletDecal : PackedScene = preload("res://Scenes/BulletDecalScene.tscn")
+@onready var audioManager : PackedScene = preload("res://Misc/Scenes/AudioManagerScene.tscn")
+@onready var bulletDecal : PackedScene = preload("res://Weapons/Scenes/BulletDecalScene.tscn")
 @onready var hud : CanvasLayer = %HUD
-@onready var reticle : CenterContainer = %Crosshair
-@onready var linkComponent : Node3D = $"../../../../LinkComponent"
+@onready var linkComponent : Node3D = %LinkComponent
 
 func _ready():
 	initialize()
@@ -70,14 +69,15 @@ func initialize():
 				cW.bobPos = cW.position
 				
 	if weaponStack.size() > 0:
+		#enable (equip and set up) the first weapon on the weapon stack
 		enterWeapon(weaponStack[0])
 		
 func exitWeapon(nextWeapon : int):
+	#this function manage the first part of the weapon switching mechanic
+	#in this part, the current weapon is disabled (unequiped and taked down)
 	if nextWeapon != cW.weaponId:
 		canChangeWeapons = false
 		canUseWeapon = false
-		
-		var wasReloading = !cW.canReload #si canReload faux, était en train de recharger
 		if cW.canShoot: cW.canShoot = false
 		if cW.canReload: cW.canReload = false
 		
@@ -85,20 +85,13 @@ func exitWeapon(nextWeapon : int):
 			animManager.playModelAnimation("UnequipAnim%s" % cW.weaponName, cW.unequipAnimSpeed, false)
 		await get_tree().create_timer(cW.unequipTime).timeout
 		
-		#if the weapon was in reloadind phase, instant reload
-		if wasReloading:
-			wasReloading = false
-			#cas 1 : s'il y a assez de munitions pour reremplir entièrement le chargeur
-			#cas 2 : plus assez de munitions, on remplit le chargeur avec les munitions qui reste
-			var nbAmmoToRefill : int = min(cW.totalAmmoInMagRef - cW.totalAmmoInMag, ammoManager.ammoDict[cW.ammoType])
-			cW.totalAmmoInMag += nbAmmoToRefill
-			ammoManager.ammoDict[cW.ammoType] -= nbAmmoToRefill 
-			
 		cWM.visible = false
 		
 		enterWeapon(nextWeapon)
 	
 func enterWeapon(nextWeapon : int):
+	#this function manage the second part of the weapon switching mechanic
+	#in this part, the next weapon is enabled (equiped and set up)
 	cW = weaponList[nextWeapon]
 	nextWeapon = 0
 	cWM = cW.weSl.model
@@ -121,7 +114,7 @@ func enterWeapon(nextWeapon : int):
 	canUseWeapon = true
 	canChangeWeapons = true
 	
-func _process(delta : float):
+func _process(_delta : float):
 	if cW != null and cWM != null and canUseWeapon:
 		weaponInputs()
 		
@@ -136,12 +129,12 @@ func weaponInputs():
 	
 	if Input.is_action_just_pressed(weapon_wheel_up_action):
 		if canChangeWeapons and cW.canShoot and cW.canReload:
-			weaponIndex = min(weaponIndex + 1, weaponStack.size() - 1) #From first element of weapon stack to last element 
+			weaponIndex = min(weaponIndex + 1, weaponStack.size() - 1) #from first element of weapon stack to last element 
 			changeWeapon(weaponStack[weaponIndex])
 			
 	if Input.is_action_just_pressed(weapon_wheel_down_action):
 		if canChangeWeapons and cW.canShoot and cW.canReload:
-			weaponIndex = max(weaponIndex - 1, 0) #From last element of weapon stack to first element 
+			weaponIndex = max(weaponIndex - 1, 0) #from last element of weapon stack to first element 
 			changeWeapon(weaponStack[weaponIndex])
 		
 func displayStats():
@@ -158,6 +151,7 @@ func changeWeapon(nextWeapon : int):
 		return 
 	
 func displayMuzzleFlash():
+	#create a muzzle flash instance, and display it at the indicated point
 	if cW.muzzleFlashRef != null:
 		var muzzleFlashInstance = cW.muzzleFlashRef.instantiate()
 		add_child(muzzleFlashInstance)
@@ -168,6 +162,7 @@ func displayMuzzleFlash():
 		return
 		
 func displayBulletHole(colliderPoint : Vector3, colliderNormal : Vector3):
+	#create a muzzle flash instance, and display it at the indicated point
 	var bulletDecalInstance = bulletDecal.instantiate()
 	get_tree().get_root().add_child(bulletDecalInstance)
 	bulletDecalInstance.global_position = colliderPoint
@@ -176,7 +171,7 @@ func displayBulletHole(colliderPoint : Vector3, colliderNormal : Vector3):
 	
 func weaponSoundManagement(soundName : AudioStream, soundSpeed : float):
 	var audioIns : AudioStreamPlayer3D = audioManager.instantiate()
-	get_tree().get_root().add_child(audioIns)
+	get_tree().get_root().add_child.call_deferred(audioIns)
 	audioIns.global_transform = cW.weSl.attackPoint.global_transform
 	audioIns.bus = "Sfx"
 	audioIns.pitch_scale = soundSpeed
@@ -184,4 +179,5 @@ func weaponSoundManagement(soundName : AudioStream, soundSpeed : float):
 	audioIns.play()
 	
 func forceAttackPointTransformValues(attackPoint : Marker3D):
+	#reset the attack points rotation values, to ensure that the projectiles will be shot in the correct direction
 	if attackPoint.rotation != Vector3.ZERO: attackPoint.rotation = Vector3.ZERO

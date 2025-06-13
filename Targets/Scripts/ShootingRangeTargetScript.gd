@@ -1,0 +1,39 @@
+extends CharacterBody3D
+
+var health : float = 100.0
+var healthRef : float
+var isDisabled : bool = false
+
+@onready var animManager : AnimationPlayer = $AnimationPlayer
+@onready var damNumSpawnPoint : Marker3D = $DamageNumberSpawnPoint
+
+func _ready():
+	healthRef = health
+	animManager.play("idle")
+	
+func hitscanHit(damageVal : float, _hitscanDir : Vector3, _hitscanPos : Vector3):
+	health -= damageVal
+	
+	DamageNumberScript.displayNumber(damageVal, damNumSpawnPoint.global_position, 110, DamageNumberScript.DamageType.NORMAL)
+	
+	if health <= 0.0:
+		isDisabled = true
+		animManager.play("fall")
+		
+func projectileHit(damageVal : float, _hitscanDir : Vector3):
+	health -= damageVal
+	
+	DamageNumberScript.displayNumber(damageVal, damNumSpawnPoint.global_position, 110, DamageNumberScript.DamageType.NORMAL)
+	
+	if health <= 0.0:
+		isDisabled = true
+		animManager.play("fall")
+		
+		
+		
+		
+		
+		
+		
+		
+		
