@@ -94,7 +94,7 @@ You will need to create a input action in your project for each action, and then
 (for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
 
 
-### To create and add a new weapon to the weapon manager :
+### How to create and add a new weapon to the weapon manager :
 !  There is already 5 differents weapon exemples in the asset, each of them representing a different type of weapon (pistol, assault rifle, shotgun, sniper rifle, rocket launcher), you can use them as exemples, and/or to speed up the creation process.
 
 - Create a new Node3D node, and add it to the "weapon container" node.
@@ -109,15 +109,15 @@ You will need to create a input action in your project for each action, and then
   
 - Fill the resource the way you want (the only mandatory variables are ("WeaponName", "WeaponId", a type (Hitscan or projectile), "Position")
   
-! The weapon id from the weapon resource and the weapon id from the weapon slot must be the same, otherwise it won't work !
+   ! The weapon id from the weapon resource and the weapon id from the weapon slot must be the same, otherwise it won't work !
 
 - In the "WeaponManager" node, from the editor, add the weapon resources you want the game to load at the start of the scene, in the "Weapon Resources" variable.
   
 - Then, add the weapons you want the player character to have at the start of the game, in the "Start weapons" variable.
 
-! The order in which you place the weapon resources and start weapons doesn't matter, you just need to be sure that the weapon id is the same !
+   ! The order in which you place the weapon resources and start weapons doesn't matter, you just need to be sure that the weapon id is the same !
 
-! You need to have at least one start weapon saved in the "Start weapons" variable, it can be a empty node with only the mandatory resource variables assigned, but you need at least one !
+   ! You need to have at least one start weapon saved in the "Start weapons" variable, it can be a empty node with only the mandatory resource variables assigned, but you need at least one !
 
 - If you have done everything correctly, your weapon should be usable and work in game !
 
