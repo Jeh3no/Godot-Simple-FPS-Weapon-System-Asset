@@ -95,10 +95,7 @@ You will need to create a input action in your project for each action, and then
 
 
 ### To create and add a new weapon to the weapon manager :
-!  There is already 5 differents weapon exemples in the asset, each of them representing a different type of weapon (pistol, assault rifle, shotgun, sniper rifle, rocket launcher)
-
-You can use them as exemples, and/or to speed up the creation process.
-
+!  There is already 5 differents weapon exemples in the asset, each of them representing a different type of weapon (pistol, assault rifle, shotgun, sniper rifle, rocket launcher), you can use them as exemples, and/or to speed up the creation process.
 
 - Create a new Node3D node, and add it to the "weapon container" node.
   
