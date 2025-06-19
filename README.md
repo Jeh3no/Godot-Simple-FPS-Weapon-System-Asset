@@ -29,45 +29,45 @@ The video showcasing the asset features :
 
 # **Features**
 
--Ressource based weapons
+ -Ressource based weapons
 
--Weapon switching
+ -Weapon switching
 
--Weapon shooting
-
--Weapon reloading
-
--Weapon bobbing
-
--Weapon tilting
-
--Weapon swaying
-
--Hitscan and projectile types 
-
--Physics behaviour for both hitscan and projectile
-
-
--Shared ammo between weapons
-
--Ammo refilling
-
-
--Camera procedural recoil
-
--Camera bobbing
-
--Camera tilting
-
-
--Muzzle flash
-
--Bullet hole/decal
-
-
--Test map, with shooting range
-
--State machine based character controller (https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
+ -Weapon shooting
+ 
+ -Weapon reloading
+ 
+ -Weapon bobbing
+ 
+ -Weapon tilting
+ 
+ -Weapon swaying
+ 
+ -Hitscan and projectile types 
+ 
+ -Physics behaviour for both hitscan and projectile
+ 
+ 
+ -Shared ammo between weapons
+ 
+ -Ammo refilling
+ 
+ 
+ -Camera procedural recoil
+ 
+ -Camera bobbing
+ 
+ -Camera tilting
+ 
+ 
+ -Muzzle flash
+ 
+ -Bullet hole/decal
+ 
+ 
+ -Test map, with shooting range
+ 
+ -State machine based character controller (https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
 
 
 # **Purpose**
