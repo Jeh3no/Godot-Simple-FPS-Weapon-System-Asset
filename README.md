@@ -108,9 +108,9 @@ Weapons models and textures by Aligned Games : https://opengameart.org/content/p
 
 ### Important precision : 
 
-The "polygonal-modern-weapons-collection-1-asset-package" is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence this asset under with the same licences.
+The "polygonal-modern-weapons-collection-1-asset-package" is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence this asset under the same licences.
 
-If you want to get rid of theses licences once you have the asset, you'll need to geet rid of all the content coming from this asset.
+If you want to get rid of theses licences once you have the asset, you'll need to geet rid of all the content coming from the "polygonal-modern-weapons-collection-1-asset-package" asset.
 
 Here's the folders where the content is located : 
 
