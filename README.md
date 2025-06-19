@@ -1,3 +1,5 @@
+Important precision about the asset licence, please write it if you want to make a commercial game with this asset !!
+
 # Godot Simple FPS Weapon System Asset
 
 
@@ -27,32 +29,48 @@ The video showcasing the asset features :
 # **Features**
 
 -Ressource based weapons
+
 -Weapon switching
+
 -Weapon shooting
+
 -Weapon reloading
+
 -Weapon bobbing
+
 -Weapon tilting
+
 -Weapon swaying
+
 -Hitscan and projectile types 
+
 -Physics behaviour for both hitscan and projectile
 
+
 -Shared ammo between weapons
+
 -Ammo refilling
 
+
 -Camera procedural recoil
+
 -Camera bobbing
+
 -Camera tilting
 
+
 -Muzzle flash
+
 -Bullet hole/decal
 
+
 -Test map, with shooting range
+
 -State machine based character controller (https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
 
 
-
-
 # **Purpose**
+
 
 I simply wanted to make it.
 Plus, it can be considered as some kind of demo for a possible big, really big asset.
@@ -93,6 +111,7 @@ If you want to get rid of theses licences once you have the asset, you'll need t
 Here's the folders where the content is located : 
 
 -Weapons/Models
+
 -Weapons/Textures
 
 Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
