@@ -1277,13 +1277,11 @@ maxDownAngleView = 90.0
 baseCameraLerpSpeed = 8.0
 crouchCameraLerpSpeed = 8.0
 crouchCameraDepth = -0.4
-walkBobFrequency = 1.0
-walkBobAmplitude = 0.1
-runBobFrequency = 1.1
-runBobAmplitude = 0.12
-camTiltRotationValue = 0.6
-camTiltRotationSpeed = 2.2
-onFloorTiltValDivider = 1.5
+bobFrequency = 0.9
+bobAmplitude = 0.1
+tiltRotationValue = 0.6
+tiltRotationSpeed = 2.0
+inAirTiltValDivider = 1.9
 mouseInputSpeed = 10.0
 mouseModeAction = "mouseMode"
 
@@ -1471,7 +1469,6 @@ libraries = {
 shape = SubResource("CapsuleShape3D_5yjma")
 
 [node name="Model" type="MeshInstance3D" parent="."]
-visible = false
 layers = 2
 material_override = SubResource("StandardMaterial3D_6bkys")
 mesh = SubResource("CapsuleMesh_p2iaj")

@@ -19,13 +19,14 @@ var damageNumber : PackedScene = preload("res://Targets/Scenes/DamageNumberScene
 var normalColor : Color = Color(248, 248, 242, 255)
 var criticalColor : Color = Color(255, 85, 85, 255)
 
-# Tween
+# Tweens
 var upTweenAmount : float = 0.5
 var upTweenLength : float = 0.25
 var downTweenLength : float = 0.5
 
 
 func getLabel() -> Label3D:
+	#create new label3D
 	var newLabel : Label3D
 	
 	newLabel = damageNumber.instantiate()
@@ -35,6 +36,8 @@ func getLabel() -> Label3D:
 	
 func displayNumber(value : float, position : Vector3, fontSize : int, damageType : DamageType = DamageType.NORMAL) -> void:
 	var numberLabel : Label3D = getLabel()
+	
+	#set properties
 	numberLabel.global_position = position
 	numberLabel.text = str(int(value))
 	numberLabel.font_size = fontSize

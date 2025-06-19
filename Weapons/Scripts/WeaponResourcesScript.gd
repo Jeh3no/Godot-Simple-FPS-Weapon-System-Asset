@@ -88,14 +88,19 @@ var canReload : bool = true
 @export_range(0.0, 1.0, 0.01) var tiltRotAmount : float = 0.0
 
 @export_group("Sway variables")
-@export_range(0.0, 5.0, 0.01) var swayRotSpeed : float = 0.0
-@export_range(0.0, 1.0, 0.001) var swayRotAmount : float = 0.0
+@export var minSwayVal : Vector2 = Vector2.ZERO
+@export var maxSwayVal : Vector2 = Vector2.ZERO
+@export_range(0, 0.2, 0.01) var swaySpeedPos: float = 0.0
+@export_range(0, 0.2, 0.01) var swaySpeedRot : float = 0.0
+@export_range(0, 0.5, 0.01) var swayAmountPos : float = 0.0
+@export_range(0, 100.0, 0.1) var swayAmountRot : float = 0.0
 
 @export_group("Bob variables")
 var bobPos : Array[Vector3]
 @export_range(0.0, 0.1, 0.001) var bobFreq : float = 0.0
 @export_range(0.0, 0.1, 0.001) var bobAmount : float = 0.0
 @export_range(0.0, 50.0, 1.0) var bobSpeed : float = 0.0
+@export var onIdleBobFreqDivider : float = 0.0
 
 @export_group("Muzzle flash variables")
 @export var muzzleFlashRef : PackedScene

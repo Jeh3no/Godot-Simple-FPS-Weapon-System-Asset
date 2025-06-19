@@ -22,16 +22,16 @@ class_name CameraObject
 @export var crouchCameraDepth : float 
 
 @export_group("Camera bob variables")
+@export var enableBob : bool = true
 var headBobValue : float
-@export var walkBobFrequency : float
-@export var walkBobAmplitude : float
-@export var runBobFrequency : float
-@export var runBobAmplitude : float
+@export var bobFrequency : float
+@export var bobAmplitude : float
 
 @export_group("Camera tilt variables")
-@export var camTiltRotationValue : float 
-@export var camTiltRotationSpeed : float
-@export var onFloorTiltValDivider : float
+@export var enableTilt : bool = true
+@export var tiltRotationValue : float 
+@export var tiltRotationSpeed : float
+@export var inAirTiltValDivider : float
 
 @export_group("Input variables")
 var mouseInput : Vector2 
@@ -74,6 +74,7 @@ func applies(delta : float):
 		rotation.z = lerp(rotation.z, deg_to_rad(crouchCamAngle) * playChar.inputDirection.x if playChar.inputDirection.x != 0.0 else deg_to_rad(crouchCamAngle), crouchCameraLerpSpeed * delta)
 	elif playChar.stateMachine.currStateName == "Run": 
 		camera.fov = lerp(camera.fov, runFOV, fovTransitionSpeed * delta)
+		rotation.z = lerp(rotation.z, deg_to_rad(baseCamAngle), baseCameraLerpSpeed * delta)
 	elif playChar.stateMachine.currStateName == "Jump": 
 		# Maintain the current FOV when jumping
 		camera.fov = lerp(camera.fov, camera.fov, fovTransitionSpeed * delta)
@@ -86,31 +87,25 @@ func applies(delta : float):
 		camera.fov = lerp(camera.fov, startFOV, fovTransitionSpeed * delta)
 			
 func cameraBob(delta):
-	# Apply the bobbing effect based on the character's state and headbob settings
-	if playChar.stateMachine.currStateName == "Run":
+	if enableBob:
 		headBobValue += delta * playChar.velocity.length() * float(playChar.is_on_floor())
-		camera.transform.origin = headbob(headBobValue, runBobFrequency, runBobAmplitude)
-	elif playChar.stateMachine.currStateName == "Walk":
-		headBobValue += delta * playChar.velocity.length() * float(playChar.is_on_floor())
-		camera.transform.origin = headbob(headBobValue, walkBobFrequency, walkBobAmplitude)
-	else:
-		# Reset headBobValue to prevent abrupt changes when starting to move
-		headBobValue = 0.0
-
-func headbob(time, bobFrequency, bobAmplitude): 
+		camera.transform.origin = headbob(headBobValue, bobFrequency, bobAmplitude)
+		
+func headbob(time, bobFreq, bobAmpli): 
 	#some trigonometry stuff here, basically it uses the cosinus and sinus functions (sinusoidal function) to get a nice and smooth bob effect
 	var pos = Vector3.ZERO
-	pos.y = sin(time * bobFrequency) * bobAmplitude
-	pos.x = cos(time * bobFrequency / 2) * bobAmplitude
+	pos.y = sin(time * bobFreq) * bobAmpli
+	pos.x = cos(time * bobFreq / 2) * bobAmpli
 	return pos
 	
 func cameraTilt(delta): 
-	#this function manage the camera tilting when the character is moving on the x axis (left and right)
-	if playChar.moveDirection != Vector3.ZERO and playChar.inputDirection != Vector2.ZERO:
-		playCharInputDir = playChar.inputDirection #get input direction to know where the character is heading to
-		#apply smooth tilt movement
-		if !playChar.is_on_floor(): rotation.z = lerp(rotation.z, -playCharInputDir.x * camTiltRotationValue/1.6, camTiltRotationSpeed * delta)
-		else: rotation.z = lerp(rotation.z, -playCharInputDir.x * camTiltRotationValue, camTiltRotationSpeed * delta)
+	if enableTilt:
+		#this function manage the camera tilting when the character is moving on the x axis (left and right)
+		if playChar.moveDirection != Vector3.ZERO and playChar.inputDirection != Vector2.ZERO:
+			playCharInputDir = playChar.inputDirection #get input direction to know where the character is heading to
+			#apply smooth tilt movement
+			if !playChar.is_on_floor(): rotation.z = lerp(rotation.z, -playCharInputDir.x * tiltRotationValue/inAirTiltValDivider, tiltRotationSpeed * delta)
+			else: rotation.z = lerp(rotation.z, -playCharInputDir.x * tiltRotationValue, tiltRotationSpeed * delta)
 
 func mouseMode():
 	#manage the mouse mode (visible = can use mouse on the screen, captured = mouse not visible and locked in at the center of the screen)

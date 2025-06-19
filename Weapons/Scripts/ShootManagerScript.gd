@@ -61,9 +61,6 @@ func shoot():
 				
 		cW.canShoot = true
 		
-	else:
-		print("Can't shoot, or is already shooting")
-		
 func getCameraPOV():  
 	var camera : Camera3D = %Camera
 	var window : Window = get_window()

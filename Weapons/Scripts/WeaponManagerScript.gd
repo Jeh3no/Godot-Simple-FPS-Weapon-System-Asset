@@ -140,8 +140,8 @@ func weaponInputs():
 func displayStats():
 	hud.displayWeaponStack(weaponStack.size())
 	hud.displayWeaponName(cW.weaponName)
-	hud.displayTotalAmmoInMag(cW.totalAmmoInMag)
-	hud.displayTotalAmmo(ammoManager.ammoDict[cW.ammoType])
+	hud.displayTotalAmmoInMag(cW.totalAmmoInMag, cW.nbProjShotsAtSameTime)
+	hud.displayTotalAmmo(ammoManager.ammoDict[cW.ammoType], cW.nbProjShotsAtSameTime)
 	
 func changeWeapon(nextWeapon : int):
 	if canChangeWeapons and cW.canShoot and cW.canReload:
@@ -172,11 +172,16 @@ func displayBulletHole(colliderPoint : Vector3, colliderNormal : Vector3):
 func weaponSoundManagement(soundName : AudioStream, soundSpeed : float):
 	var audioIns : AudioStreamPlayer3D = audioManager.instantiate()
 	get_tree().get_root().add_child.call_deferred(audioIns)
-	audioIns.global_transform = cW.weSl.attackPoint.global_transform
-	audioIns.bus = "Sfx"
-	audioIns.pitch_scale = soundSpeed
-	audioIns.stream = soundName
-	audioIns.play()
+	#makes sure the node is in the scene tree
+	await get_tree().process_frame
+	if audioIns.is_inside_tree():
+		audioIns.global_transform = cW.weSl.attackPoint.global_transform
+		audioIns.bus = "Sfx"
+		audioIns.pitch_scale = soundSpeed
+		audioIns.stream = soundName
+		audioIns.play()
+	else:
+		print("The sound can't be played, AudioStreamPlayer3D instance is not in the scene tree")
 	
 func forceAttackPointTransformValues(attackPoint : Marker3D):
 	#reset the attack points rotation values, to ensure that the projectiles will be shot in the correct direction

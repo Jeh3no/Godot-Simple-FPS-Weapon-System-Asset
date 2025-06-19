@@ -34,8 +34,13 @@ func displayWeaponStack(weaponStack : int):
 func displayWeaponName(weaponName : String):
 	weaponNameLabelText.set_text(str(weaponName))
 	
-func displayTotalAmmoInMag(totalAmmoInMag : int):
-	totalAmmoInMagLabelText.set_text(str(totalAmmoInMag))
+func displayTotalAmmoInMag(totalAmmoInMag : int, nbProjShotsAtSameTime : int):
+	totalAmmoInMagLabelText.set_text(str(totalAmmoInMag/nbProjShotsAtSameTime))
 	
-func displayTotalAmmo(totalAmmo):
-	totalAmmoLabelText.set_text(str(totalAmmo))
+func displayTotalAmmo(totalAmmo : int, nbProjShotsAtSameTime : int):
+	totalAmmoLabelText.set_text(str(totalAmmo/nbProjShotsAtSameTime))
+	
+	
+	
+	
+	

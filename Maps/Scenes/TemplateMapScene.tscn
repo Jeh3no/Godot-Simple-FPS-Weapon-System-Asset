@@ -332,36 +332,48 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 13, 0.385, -111)
 
 [node name="HitableBox" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2564, 1.12582, 6.35022)
+mass = 1.2
 
 [node name="HitableBox2" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.921721, 0, 0.387853, 0, 1, 0, -0.387853, 0, 0.921721, -13.1641, 1.12582, 8.26586)
+mass = 1.2
 
 [node name="HitableBox3" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.979435, 0, -0.201762, 0, 1, 0, 0.201762, 0, 0.979435, -15.4334, 1.12582, 8.07986)
+mass = 1.2
 
 [node name="HitableBox6" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.891466, 0, 0.453088, 0, 1, 0, -0.453088, 0, 0.891466, 16.0705, 1.12582, -16.343)
+mass = 1.2
 
 [node name="HitableBox9" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.321935, 0, 0.946762, 0, 1, 0, -0.946762, 0, 0.321935, 18.8323, 1.12582, -18.74)
+mass = 1.2
 
 [node name="HitableBox7" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.645951, 0, 0.763379, 0, 1, 0, -0.763379, 0, 0.645951, 18.0237, 1.12582, -12.8762)
+mass = 1.2
 
 [node name="HitableBox8" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.964549, 0, 0.263907, 0, 1, 0, -0.263907, 0, 0.964549, 15.4758, 1.12582, -13.0919)
+mass = 1.2
 
 [node name="HitableBox10" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.858585, 0, 0.512673, 0, 1, 0, -0.512673, 0, 0.858585, -5.78731, 7.00312, -13.8657)
+mass = 1.2
 
 [node name="HitableBox12" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28314, 4.0878, -24.9647)
+mass = 1.2
 
 [node name="HitableBox13" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21063, 4.0878, -24.9647)
+mass = 1.2
 
 [node name="HitableBox14" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45764, 4.0878, -24.9647)
+mass = 1.2
 
 [node name="HitableBox11" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.751, 0, 0.660303, 0, 1, 0, -0.660303, 0, 0.751, -12.45, 7.00312, -12.8909)
+mass = 1.2

@@ -63,6 +63,3 @@ func weaponSoundManagement(soundName):
 		audioIns.volume_db = 5.0
 		audioIns.stream = soundName
 		audioIns.play()
-	else:
-		print("Projectile doesn't have an explosion sound")
-	

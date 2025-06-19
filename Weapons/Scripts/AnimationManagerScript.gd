@@ -24,19 +24,25 @@ func weaponTilt(playCharInput, delta):
 	cWM.rotation.z = lerp(cWM.rotation.z, playCharInput.x * cW.tiltRotAmount, cW.tiltRotSpeed * delta)
 	
 func weaponSway(mouseInput, delta):
-	#get mouse directional input
-	mouseInput = lerp(mouseInput, Vector2.ZERO, 10 * delta)
+	#clamp mouse movement
+	mouseInput.x = clamp(mouseInput.x, cW.minSwayVal.x, cW.maxSwayVal.x)
+	mouseInput.y = clamp(mouseInput.y, cW.minSwayVal.y, cW.maxSwayVal.y)
 	
-	#rotate weapon model depending on the mouse input corresponding axis
-	cWM.rotation.x = lerp(cWM.rotation.x, mouseInput.y * cW.swayRotAmount, cW.swayRotSpeed * delta)
-	cWM.rotation.y = lerp(cWM.rotation.y, -mouseInput.x * cW.swayRotAmount + PI, cW.swayRotSpeed * delta)
+	#lerp weapon position based on mouse movement, relative to the initial position
+	cWM.position.x = lerp(cWM.position.x, cW.position[0].x + (mouseInput.x * cW.swayAmountPos) * delta, cW.swaySpeedPos)
+	cWM.position.y = lerp(cWM.position.y, cW.position[0].y - (mouseInput.y * cW.swayAmountPos) * delta, cW.swaySpeedPos)
+	
+	#lerp weapon rotation based on mouse movement, relative to the initial rotation
+	#use of rad_to_deg here, because we rotate the model based on degrees, but the saved weapon rotation is in radians
+	cWM.rotation_degrees.y = lerp(cWM.rotation_degrees.y, rad_to_deg(cW.position[1].y) -  (mouseInput.x * cW.swayAmountRot) * delta, cW.swaySpeedRot)
+	cWM.rotation_degrees.x = lerp(cWM.rotation_degrees.x, rad_to_deg(cW.position[1].x) + (mouseInput.y * cW.swayAmountRot) * delta, cW.swaySpeedRot)
 	
 func weaponBob(vel : float, delta):
 	var bobFreq : float = cW.bobFreq
 	
 	#change bob frequency for weapon idle
 	if vel < 4.0:
-		bobFreq /= 1.4
+		bobFreq /= cW.onIdleBobFreqDivider
 		
 	#smoothly move the weapon model in the form of a curve (hence the use of sin)
 	cWM.position.y = lerp(cWM.position.y, cW.bobPos[0].y + sin(Time.get_ticks_msec() * bobFreq) * cW.bobAmount * vel / 10, cW.bobSpeed * delta)
