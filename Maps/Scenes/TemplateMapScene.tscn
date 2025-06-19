@@ -24,9 +24,6 @@ glow_enabled = true
 
 [node name="TemplateMap" type="Node3D"]
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_07h0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9515, 2.18864, 6.2689)
-
 [node name="Structures" type="Node3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Structures"]
@@ -142,11 +139,11 @@ collision_mask = 10
 size = Vector3(5.11182, 1.4892, 0.596558)
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Structures"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28713, 2.02341, -25)
 material_override = ExtResource("3_3spjh")
 use_collision = true
 collision_mask = 10
-size = Vector3(18, 3, 4)
+size = Vector3(22.2754, 3.04682, 4)
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="Structures"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 2, -3)
@@ -256,7 +253,7 @@ ammoToRefill = {
 script = ExtResource("5_r8qas")
 
 [node name="Spawner1" type="Node3D" parent="SpawnerManager"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.547, 1, -30.1397)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111524, 1, -30.1397)
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -377,3 +374,6 @@ mass = 1.2
 [node name="HitableBox11" parent="ShootingRangeTargetManager" instance=ExtResource("8_2mjpe")]
 transform = Transform3D(0.751, 0, 0.660303, 0, 1, 0, -0.660303, 0, 0.751, -12.45, 7.00312, -12.8909)
 mass = 1.2
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_07h0i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.111524, 1.43224, -30.1397)
