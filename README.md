@@ -29,7 +29,7 @@ The video showcasing the asset features :
 
 # **Features**
 
-- Ressource based weapons
+- Resource based weapons
 
 - Weapon switching
 
@@ -88,9 +88,26 @@ Simply download it, add it to your project, get the files you want to use.
 
 If that's the case, you can simply drag and drop the folders under the "addon" one in a freshly created project.
 
-you need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
+
+You will need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
 
 (for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
+
+
+### To create and add a new weapon to the weapon manager :
+- Create a new Node3D node, and add it to the "weapon container" node.
+- 
+- Place your weapon model as a child of the Node3D node.
+- 
+- Add a Marker3D node as a child of the weapon model, it will be the weapon attack point.
+- 
+- Add a "WeaponSlotScript" script to the Node3D node, and fill the model (Node3D node) and attack point (Marker3D node) variables, as well as the weapon id.
+- 
+- Create a new resource for your weapon, using the "WeaponResource" class reference.
+- 
+- Fill the resource the way you want (the only mandatory variables are ("WeaponName", "WeaponId", a type (Hitscan or projectile), "Position")
+  
+! The weapon id from the weapon resource and the weapon id from the weapon slot must be the same, otherwise it won't work !
 
 
 # **Requets**
