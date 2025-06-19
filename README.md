@@ -85,9 +85,13 @@ you need to create a input action in your project for each action, and then type
 Weapons models and textures by Aligned Games : https://opengameart.org/content/polygonal-modern-weapons-collection-1-asset-package
 
 Important precision : 
+
 The "polygonal-modern-weapons-collection-1-asset-package" is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence this asset under with the same licences.
+
 If you want to get rid of theses licences once you have the asset, you'll need to geet rid of all the content coming from this asset.
+
 Here's the folders where the content is located : 
+
 -Weapons/Models
 -Weapons/Textures
 
