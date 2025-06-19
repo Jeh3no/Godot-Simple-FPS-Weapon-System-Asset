@@ -91,7 +91,7 @@ If that's the case, you can simply drag and drop the folders under the "addon" o
 
 You will need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
 
-(for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
+(for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction")
 
 
 ### How to create and add a new weapon to the weapon manager :
@@ -107,7 +107,7 @@ You will need to create a input action in your project for each action, and then
   
 - Create a new resource for your weapon, using the "WeaponResource" class reference.
   
-- Fill the resource the way you want (the only mandatory variables are ("WeaponName", "WeaponId", a type (Hitscan or projectile), "Position")
+- Fill the resource the way you want (the only mandatory variables are ("WeaponName", "WeaponId", a type (Hitscan or projectile), "Position"))
   
   ! The weapon id from the weapon resource and the weapon id from the weapon slot must be the same, otherwise it won't work !
 
@@ -135,6 +135,7 @@ You will need to create a input action in your project for each action, and then
 # **Credits**
 
 Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
+
 
 
 Weapons models and textures by Aligned Games : https://opengameart.org/content/polygonal-modern-weapons-collection-1-asset-package
