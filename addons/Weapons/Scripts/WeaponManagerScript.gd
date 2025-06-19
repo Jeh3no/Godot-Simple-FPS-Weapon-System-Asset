@@ -60,7 +60,6 @@ func initialize():
 						weaponStack.append(cW.weaponId)
 						
 				cW.weSl = weaponSlot #get weapon slot script ref from weapon list (allows to get access to model, attack point, ...)
-				weaponIndex += 1
 				cWM = cW.weSl.model
 				cWM.visible = false
 				
