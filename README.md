@@ -136,8 +136,6 @@ You will need to create a input action in your project for each action, and then
 
 Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
 
-
-
 Weapons models and textures by Aligned Games : https://opengameart.org/content/polygonal-modern-weapons-collection-1-asset-package
 
 ### Important precision : 
