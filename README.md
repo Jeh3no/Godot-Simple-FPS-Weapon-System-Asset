@@ -7,9 +7,9 @@
  # **General**
 
 
-This asset provides a simple, fully commented, finite state machine based controller, camera, as well as a properties HUD.
+This asset provides a simple, fully commented, weapon system for FPS games.
 
-A test map is provided to test the controller.
+A test map as well as a character controller are provided (the character controller is another asset i made some mounths ago : https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
 
 The controller use a finite state machine, designed to be easely editable, allowing to easily add, remove and modify behaviours and actions.
 
@@ -21,39 +21,41 @@ The asset is 100% written in GDScript.
 
 He works perfectly on Godot 4.4, and should also works wells on the others 4.x versions (4.3, 4.2, 4.1, 4.0), but you will have to remove the uid files.
 
-The video showcasing the asset features : https://youtu.be/xq3AqMtmM_4
+The video showcasing the asset features : 
 
 
 # **Features**
 
+-Ressource based weapons
+-Weapon switching
+-Weapon shooting
+-Weapon reloading
+-Weapon bobbing
+-Weapon tilting
+-Weapon swaying
+-Hitscan and projectile types 
+-Physics behaviour for both hitscan and projectile
 
- - Smooth moving
- - Ability to move on slopes and hills
- - Walking
- - Crouching (continious and once pressed input)
- - Running (continious and once pressed input)
- - Jumping (multiple jump system)
- - Jump buffering
- - Coyote jump/time
- - Air control (easely customizable thanks to curves)
- - Bunny hopping (+ auto bunny hop)
-    
- - Camera tilt
- - Camera bob
- - Custom FOV
-   
- - Reticle
- - Properties HUD
+-Shared ammo between weapons
+-Ammo refilling
+
+-Camera procedural recoil
+-Camera bobbing
+-Camera tilting
+
+-Muzzle flash
+-Bullet hole/decal
+
+-Test map, with shooting range
+-State machine based character controller (https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
+
+
 
 
 # **Purpose**
 
-
-At start, i just wanted to rework my FPS controller template, make an alternate version of it, closer to the finite state machine approach.
-
-But while i was working on it, i said to myself "why not share it with the community, when it's ready ?".
-
-And so here we go !
+I simply wanted to make it.
+Plus, it can be considered as some kind of demo for a possible big, really big asset.
 
 
 # **How to use**
@@ -62,8 +64,6 @@ And so here we go !
 It's an asset, which means you can add it to an existing project without any issue.
 
 Simply download it, add it to your project, get the files you want to use.
-
-You will see for the player character script (and in the camera script) a keybinding variables group,
 
 you need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
 
@@ -82,6 +82,14 @@ you need to create a input action in your project for each action, and then type
 
 # **Credits**
 
+Weapons models and textures by Aligned Games : https://opengameart.org/content/polygonal-modern-weapons-collection-1-asset-package
 
-Godot Theme prototype Textures, by PiCode : https://godotengine.org/asset-library/asset/2480
+Important precision : 
+The "polygonal-modern-weapons-collection-1-asset-package" is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence this asset under with the same licences.
+If you want to get rid of theses licences once you have the asset, you'll need to geet rid of all the content coming from this asset.
+Here's the folders where the content is located : 
+-Weapons/Models
+-Weapons/Textures
+
+Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
 
