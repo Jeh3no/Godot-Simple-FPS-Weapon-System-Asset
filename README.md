@@ -84,6 +84,13 @@ It's an asset, which means you can add it to an existing project without any iss
 
 Simply download it, add it to your project, get the files you want to use.
 
+But you can also use it as a starter template if you want to.
+
+If that's the case, you can simply drag and drop the folders under the "addon" one in a freshly created project.
+
+
+
+
 you need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
 
 (for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
