@@ -13,11 +13,11 @@ config_version=5
 config/name="Godot Simple FPS Weapon System"
 run/main_scene="uid://bwqrfifgj21e"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bnbuc28vfls66"
 
 [autoload]
 
-DamageNumberScript="*res://Targets/Scripts/DamageNumberScript.gd"
+DamageNumberScript="*res://addons/Targets/Scripts/DamageNumberScript.gd"
 
 [display]
 
