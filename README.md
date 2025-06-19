@@ -101,9 +101,12 @@ you need to create a input action in your project for each action, and then type
 
 # **Credits**
 
+Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
+
+
 Weapons models and textures by Aligned Games : https://opengameart.org/content/polygonal-modern-weapons-collection-1-asset-package
 
-Important precision : 
+### Important precision : 
 
 The "polygonal-modern-weapons-collection-1-asset-package" is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence this asset under with the same licences.
 
@@ -114,7 +117,4 @@ Here's the folders where the content is located :
 -Weapons/Models
 
 -Weapons/Textures
-
-
-Kenney Prototype Textures, made by Kenney, upload on the Godot asset library by Calinou : https://godotengine.org/asset-library/asset/781
 
