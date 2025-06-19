@@ -14,13 +14,13 @@
  
 This asset provides a simple, fully commented, weapon system for FPS games.
 
-A test map as well as a character controller are provided (the character controller is another asset i made some mounths ago : https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
+A test map with a shooting range as well as a character controller are provided (the character controller is another asset i made some mounths ago : https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
 
-The controller use a finite state machine, designed to be easely editable, allowing to easily add, remove and modify behaviours and actions.
+The weapon system is resource based, designed to easely customize weapons.
 
-Each state has his own script, allowing to easly filter and manage the communication between each state.
+The weapons are monitored by a weapon manager, designed to easely add/remove weapons to the game.
 
-He is also very customizable, with a whole set of open variables for every state and for more general stuff. This is the same for the camera.
+Each component of the weapon (shoot, reload, animation, ammunition) has his own script, neatly arranged in separate compartments.
 
 The asset is 100% written in GDScript.
 
