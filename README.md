@@ -9,7 +9,7 @@
 
  # **General**
 
-
+ 
 This asset provides a simple, fully commented, weapon system for FPS games.
 
 A test map as well as a character controller are provided (the character controller is another asset i made some mounths ago : https://github.com/Jeh3no/Godot-Simple-State-Machine-First-Person-Controller)
@@ -80,16 +80,13 @@ Plus, it can be considered as some kind of demo for a possible big, really big a
 # **How to use**
 
 
-It's an asset, which means you can add it to an existing project without any issue.
+- It's an asset, which means you can add it to an existing project without any issue.
 
 Simply download it, add it to your project, get the files you want to use.
 
-But you can also use it as a starter template if you want to.
+- But you can also use it as a starter template if you want to.
 
 If that's the case, you can simply drag and drop the folders under the "addon" one in a freshly created project.
-
-
-
 
 you need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
 
