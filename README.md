@@ -95,19 +95,31 @@ You will need to create a input action in your project for each action, and then
 
 
 ### To create and add a new weapon to the weapon manager :
+!  There is already 5 differents weapon exemples in the asset, each of them representing a different type of weapon (pistol, assault rifle, shotgun, sniper rifle, rocket launcher)
+
 - Create a new Node3D node, and add it to the "weapon container" node.
   
 - Place your weapon model as a child of the Node3D node.
   
 - Add a Marker3D node as a child of the weapon model, it will be the weapon attack point.
   
-- Add a "WeaponSlotScript" script to the Node3D node, and fill the model (Node3D node) and attack point (Marker3D node) variables, as well as the weapon id.
+- Add a "WeaponSlotScript" script to the Node3D node, and assign the model (Node3D node) and attack point (Marker3D node) variables, as well as the weapon id variable.
   
 - Create a new resource for your weapon, using the "WeaponResource" class reference.
   
 - Fill the resource the way you want (the only mandatory variables are ("WeaponName", "WeaponId", a type (Hitscan or projectile), "Position")
   
 ! The weapon id from the weapon resource and the weapon id from the weapon slot must be the same, otherwise it won't work !
+
+- In the "WeaponManager" node, from the editor, add the weapon resources you want the game to load at the start of the scene, in the "Weapon Resources" variable.
+  
+- Then, add the weapons you want the player character to have at the start of the game, in the "Start weapons" variable.
+
+! The order in which you place the weapon resources and start weapons doesn't matter, you just need to be sure that the weapon id is the same !
+
+! You need to have at least one start weapon saved in the "Start weapons" variable, it can be a empty node with only the mandatory resource variables assigned, but you need at least one !
+
+- If you have done everything correctly, your weapon should be usable and work in game !
 
 
 # **Requets**
