@@ -1,4 +1,4 @@
-### Important precision about the asset licence, please read it if you want to make a commercial game with this asset !!
+### Important precision about the asset licence, please read it if you want/plan to make a commercial game with this asset !!
 
 
 # Godot Simple FPS Weapon System Asset
