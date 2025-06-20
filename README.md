@@ -124,7 +124,7 @@ You will need to create a input action in your project for each action, and then
 
 - If you have done everything correctly, your weapon should be usable and work in game !
 
-
+  
 # **Requets**
 
 
