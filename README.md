@@ -75,7 +75,7 @@ The video showcasing the asset features :
 # **Purpose**
 
 
-I simply wanted to make it.
+I simply wanted to make it, and share it with the community.
 
 Plus, it can be considered as some kind of demo for a possible big, really big asset.
 
