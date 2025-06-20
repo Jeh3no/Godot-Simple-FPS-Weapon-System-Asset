@@ -32,7 +32,7 @@ The video showcasing the asset features : https://youtu.be/B4cASUFbamU
 
 A precision about the showcase video : the doom-like sprites, and all the weapon sounds you heard in the video are not in the asset files, because they are under proprietary license.
 
-### You can see this asset as some sort of demo, for a possible, much bigger (and better) asset, which will be may more advanced, and with a ton of new features 
+### You can see this asset as some sort of demo, for a possible, much bigger (and better) asset, which will be may more advanced, and will have a ton of new features 
 
 
 # **Features**
