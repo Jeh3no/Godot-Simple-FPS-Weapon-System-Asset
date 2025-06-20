@@ -6,7 +6,7 @@
 
  A simple yet complete FPS weapon system asset for Godot 4
 
- ![Asset logo](https://raw.githubusercontent.com/Jeh3no/Godot-Simple-FPS-Weapon-System-Asset/refs/heads/main/addons/Arts/Images/Image5.png?token=GHSAT0AAAAAADGANUTQSTNXDRGOMG6ST5MI2CVR7BQ)
+ ![Asset logo](https://github.com/Jeh3no/Godot-Simple-FPS-Weapon-System-Asset/blob/main/addons/Arts/Images/Image5.png)
 
 
  # **General**
