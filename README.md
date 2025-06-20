@@ -28,7 +28,7 @@ Of course, the code has been written in a way to be easely understandable and mo
 
 He works perfectly on Godot 4.4, and should also works wells on the others 4.x versions (4.3, 4.2, 4.1, 4.0), but you will have to remove the uid files.
 
-The video showcasing the asset features : 
+The video showcasing the asset features : https://youtu.be/B4cASUFbamU 
 
 
 # **Features**
