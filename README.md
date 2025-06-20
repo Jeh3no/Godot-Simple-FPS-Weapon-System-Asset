@@ -24,6 +24,8 @@ Each component of the weapon (shoot, reload, animation, ammunition) has his own 
 
 The asset is 100% written in GDScript.
 
+Of course, the code has been written in a way to be easely understandable and modifiable/editable, and he's as well fully commented.
+
 He works perfectly on Godot 4.4, and should also works wells on the others 4.x versions (4.3, 4.2, 4.1, 4.0), but you will have to remove the uid files.
 
 The video showcasing the asset features : 
