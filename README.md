@@ -124,6 +124,8 @@ You will need to create a input action in your project for each action, and then
 
 - If you have done everything correctly, your weapon should be usable and work in game !
 
+! About the display of damage number, there are some tremendous issue with it, that i don't understand, and i didn't manage to resolve it, so i've put an option to disable it, so that you don't see theses errors (which don't affect gameplay  in any way, i might add, but i preferred to add an option to not trigger them).
+
   
 # **Requets**
 
