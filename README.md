@@ -30,6 +30,8 @@ He works perfectly on Godot 4.4, and should also works wells on the others 4.x v
 
 The video showcasing the asset features : https://youtu.be/B4cASUFbamU 
 
+### You can see this asset as some sort of demo, for a possible, much bigger (and better) asset, which will be may more advanced, and with a ton of new features 
+
 
 # **Features**
 
