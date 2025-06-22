@@ -98,9 +98,13 @@ Simply download it, add it to your project, get the files you want to use.
 If that's the case, you can simply drag and drop the folders under the "addon" one in a freshly created project.
 
 
-You will need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable
+You will need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable.
 
-(for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction")
+(for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
+
+You'll also need to enable the "DamageNumberScript" global script as an autoload.
+
+For that, go to Project Settings -> Globals -> search the corresponding script, add it to the globals list.
 
 
 ### How to create and add a new weapon to the weapon manager :
