@@ -1,4 +1,6 @@
-### A precision about the weapons models and textures: while the asset is under MIT Licence, the weapons models and textures who are present solely for demo purpose are under GPLv3 Licence, which means that if you want to make a commercial game/project with this asset, you'll need to get rid of theses elements, please see the credits section to know in which folders they are located.
+### A precision about the weapons models and textures : 
+
+while the asset is under MIT Licence, the weapons models and textures who are present solely for demo purpose are under GPLv3 Licence, which means that if you want to make a commercial game/project with this asset, you'll need to get rid of theses elements, please see the credits section to know in which folders they are located.
 
 # Godot Simple FPS Weapon System Asset
 
