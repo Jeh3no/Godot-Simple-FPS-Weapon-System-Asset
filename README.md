@@ -1,4 +1,6 @@
-### Important precision about the asset licence in the Credits section, please read it if you want/plan to make a commercial game/project with it !!
+### A precision about the weapons models and textures : 
+
+While the asset is under MIT Licence, the weapons models and textures who are present solely for demo purpose are under GPLv3 Licence, which means that if you want to make a commercial game/project with this asset, you'll need to get rid of theses elements, please see the credits section to know in which folders they are located.
 
 
 # Godot Simple FPS Weapon System Asset
@@ -155,9 +157,7 @@ Weapons models and textures by Aligned Games : https://opengameart.org/content/p
 
 ### Important precision : 
 
-The "polygonal-modern-weapons-collection-1-asset-package" asset is licenced under GPL 3.0 and CC-BY-SA 3.0 licences, which mean that i have to licence the "Simple FPS weapon system" asset under the same licences.
-
-If you want to get rid of theses licences once you have the "Simple FPS weapon system" asset (and so be able to make a commercial game/project with it) you'll need to geet rid of all the content coming from the "polygonal-modern-weapons-collection-1-asset-package" asset.
+While the asset is under MIT Licence, the weapons models and textures who are present solely for demo purpose are under GPLv3 Licence, which means that if you want to make a commercial game/project with this asset, you'll need to get rid of theses elements of all the content coming from the "polygonal-modern-weapons-collection-1-asset-package" asset.
 
 Here's the folders where the content is located : 
 
