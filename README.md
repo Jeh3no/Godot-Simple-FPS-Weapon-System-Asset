@@ -104,6 +104,31 @@ You will need to create a input action in your project for each action, and then
 
 (for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
 
+### The input actions : 
+
+   In the PlayerCharacterScene scene :
+   
+      PlayerCharacterScript script, attached to the PlayerCharacter node:
+      
+         - moveForwardAction
+         - moveBackwardAction
+         - moveLeftAction
+         - moveRightAction
+         - runAction
+         - jumpAction
+         - crouchAction
+
+      CameraScript script, attached to CameraHolder node:
+      
+         - mouseModeAction
+
+   In the TemplateMapScene scene:
+   
+      ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
+      
+         - restartShootingRangeAction
+
+         
 You'll also need to enable the "DamageNumberScript" global script as an autoload.
 
 For that, go to Project Settings -> Globals -> search the corresponding script, add it to the globals list.
