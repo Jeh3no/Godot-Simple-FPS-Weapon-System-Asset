@@ -106,25 +106,27 @@ You will need to create a input action in your project for each action, and then
 
 ### The input actions : 
 
-   In the PlayerCharacterScene scene :
-   
-   PlayerCharacterScript script, attached to the PlayerCharacter node:
+   In the PlayerCharacterScene scene, the PlayerCharacterScript script, attached to the PlayerCharacter node:
       
    - moveForwardAction
+     
    - moveBackwardAction
+     
    - moveLeftAction
+     
    - moveRightAction
+     
    - runAction
+     
    - jumpAction
+     
    - crouchAction
 
-   CameraScript script, attached to CameraHolder node:
+   In the PlayerCharacterScene scene, the CameraScript script, attached to CameraHolder node:
       
    - mouseModeAction
-
-   In the TemplateMapScene scene:
-   
-   ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
+   - 
+   In the TemplateMapScene scene, ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
       
    - restartShootingRangeAction
 
