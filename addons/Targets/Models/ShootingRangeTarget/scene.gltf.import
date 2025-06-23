@@ -8,7 +8,7 @@ valid=false
 
 [deps]
 
-source_file="res://addons/Targets/Models/ShootingRangeTarget/scene.gltf"
+source_file="res://godot-simple-fps-weapon-system/addons/Targets/Models/ShootingRangeTarget/scene.gltf"
 
 [params]
 

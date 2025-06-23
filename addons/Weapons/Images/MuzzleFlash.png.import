@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br3rf0u4bxs67"
-path.s3tc="res://.godot/imported/MuzzleFlash.png-0b80887bf51df0e0051d3a639d95f491.s3tc.ctex"
+path.s3tc="res://.godot/imported/MuzzleFlash.png-540e0a5f049b51054a60b1cf7596dc43.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Weapons/Images/MuzzleFlash.png"
-dest_files=["res://.godot/imported/MuzzleFlash.png-0b80887bf51df0e0051d3a639d95f491.s3tc.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Images/MuzzleFlash.png"
+dest_files=["res://.godot/imported/MuzzleFlash.png-540e0a5f049b51054a60b1cf7596dc43.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jsg7sn8mrxuo"
-path="res://.godot/imported/explosive_2.fbx-b3f606f49a2ff87c738bcae80ac4414b.scn"
+uid="uid://dukkc6v72ngxn"
+path="res://.godot/imported/explosive_2.fbx-a04a3519b6859b021f41bf6580f0eb82.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Explosives/Explosive2/explosive_2.fbx"
-dest_files=["res://.godot/imported/explosive_2.fbx-b3f606f49a2ff87c738bcae80ac4414b.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Explosives/Explosive2/explosive_2.fbx"
+dest_files=["res://.godot/imported/explosive_2.fbx-a04a3519b6859b021f41bf6580f0eb82.scn"]
 
 [params]
 

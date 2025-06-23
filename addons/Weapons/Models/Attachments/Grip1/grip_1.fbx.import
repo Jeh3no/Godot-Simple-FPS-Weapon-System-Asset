@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c0umh586hhenf"
-path="res://.godot/imported/grip_1.fbx-ba8205bbc80e8e258d49e58e5b236332.scn"
+uid="uid://byay6okhbhoo6"
+path="res://.godot/imported/grip_1.fbx-00a25d455ef1fe4bef158c70d2e5dff5.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Attachments/Grip1/grip_1.fbx"
-dest_files=["res://.godot/imported/grip_1.fbx-ba8205bbc80e8e258d49e58e5b236332.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Grip1/grip_1.fbx"
+dest_files=["res://.godot/imported/grip_1.fbx-00a25d455ef1fe4bef158c70d2e5dff5.scn"]
 
 [params]
 

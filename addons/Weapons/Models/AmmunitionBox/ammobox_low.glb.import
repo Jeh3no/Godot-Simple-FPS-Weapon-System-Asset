@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cyxdexqmowyvh"
-path="res://.godot/imported/ammobox_low.glb-5bce8d8e2ba9cccf3dad8101e94d9db8.scn"
+path="res://.godot/imported/ammobox_low.glb-06f1e74aacfbe8134b0725d6aee7a768.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/AmmunitionBox/ammobox_low.glb"
-dest_files=["res://.godot/imported/ammobox_low.glb-5bce8d8e2ba9cccf3dad8101e94d9db8.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/AmmunitionBox/ammobox_low.glb"
+dest_files=["res://.godot/imported/ammobox_low.glb-06f1e74aacfbe8134b0725d6aee7a768.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://coa1qucq50h8c"
-path="res://.godot/imported/knive_4.fbx-07d52a48c1ee471fae28ee53efdb9344.scn"
+uid="uid://bmji0kg4ivf0"
+path="res://.godot/imported/knive_4.fbx-be2d0e889dac0151b7283f1e88e704e0.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Melee/Knive/Knive4/knive_4.fbx"
-dest_files=["res://.godot/imported/knive_4.fbx-07d52a48c1ee471fae28ee53efdb9344.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Melee/Knive/Knive4/knive_4.fbx"
+dest_files=["res://.godot/imported/knive_4.fbx-be2d0e889dac0151b7283f1e88e704e0.scn"]
 
 [params]
 

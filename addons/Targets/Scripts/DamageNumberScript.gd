@@ -13,7 +13,7 @@ enum DamageType{
 }
 
 # Labels
-var damageNumber : PackedScene = preload("res://addons/Targets/Scenes/DamageNumberScene.tscn")
+var damageNumber : PackedScene = preload("res://godot-simple-fps-weapon-system/addons/Targets/Scenes/DamageNumberScene.tscn")
 
 # Colors
 var normalColor : Color = Color(248, 248, 242, 255)

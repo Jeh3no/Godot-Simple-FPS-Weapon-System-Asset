@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=5 format=3 uid="uid://dn71dyben68oe"]
 
-[ext_resource type="PackedScene" uid="uid://u4tj3ey6tjg8" path="res://addons/Weapons/Scenes/RocketScene.tscn" id="1_hdqr8"]
-[ext_resource type="PackedScene" uid="uid://x8oniabn746q" path="res://addons/Weapons/Scenes/MuzzleFlashParticleScene.tscn" id="1_icrwl"]
-[ext_resource type="Script" uid="uid://bnhfyt5sl8jcd" path="res://addons/Weapons/Scripts/WeaponResourcesScript.gd" id="4_ws8wg"]
+[ext_resource type="PackedScene" uid="uid://u4tj3ey6tjg8" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scenes/RocketScene.tscn" id="1_hdqr8"]
+[ext_resource type="PackedScene" uid="uid://x8oniabn746q" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scenes/MuzzleFlashParticleScene.tscn" id="1_icrwl"]
+[ext_resource type="Script" uid="uid://bnhfyt5sl8jcd" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scripts/WeaponResourcesScript.gd" id="4_ws8wg"]
 
 [sub_resource type="Curve" id="Curve_8j8ql"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.969231, 0.0578563), 0.0, 0.0, 0, 0]

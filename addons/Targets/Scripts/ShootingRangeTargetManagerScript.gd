@@ -3,18 +3,21 @@ extends Node3D
 @export var displayDamageNumber : bool = false
 var shootRangeTargets : Array[CharacterBody3D] = []
 
+@export_group("Keybind variables")
+@export var restartShootingRangeAction : String = ""
+
 func _ready():
 	for child in get_children():
 		if child is ShootingRangeTarget:
-            if displayDamageNumber:
-                child.canDisplayDamageNumber = true
+			if displayDamageNumber:
+				child.canDisplayDamageNumber = true
 			shootRangeTargets.append(child)
 		
 func _process(_delta : float):
 	inputManagement()
 	
 func inputManagement():
-	if Input.is_action_just_pressed("restartShootingRange"):
+	if Input.is_action_just_pressed(restartShootingRangeAction):
 		restartShootRange()
 		
 func restartShootRange():

@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwqrfifgj21e"]
 
-[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/Scenes/PlayerCharacterScene.tscn" id="1_07h0i"]
-[ext_resource type="Material" uid="uid://bu7tj6ka05jwg" path="res://addons/Arts/Materials/StructureMaterial1.tres" id="2_bi2w1"]
-[ext_resource type="Material" uid="uid://cgn7do4y8jc0o" path="res://addons/Arts/Materials/StructureMaterial2.tres" id="3_3spjh"]
-[ext_resource type="PackedScene" uid="uid://pjv5ptit5tvg" path="res://addons/Weapons/Scenes/AmmoRefillerScene.tscn" id="4_qmrtm"]
-[ext_resource type="Script" uid="uid://bnwoh7ph255km" path="res://addons/Maps/Scripts/SpawnerManagerScript.gd" id="5_r8qas"]
-[ext_resource type="Script" uid="uid://c8a2kystypxdm" path="res://addons/Targets/Scripts/ShootingRangeTargetManagerScript.gd" id="6_nmj7y"]
-[ext_resource type="PackedScene" uid="uid://cjhibfe5567xa" path="res://addons/Targets/Scenes/ShootingRangeTargetScene.tscn" id="7_wwbpl"]
-[ext_resource type="PackedScene" uid="uid://d27xhk2ygjsbr" path="res://addons/Targets/Scenes/HitableBoxScene.tscn" id="8_2mjpe"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://godot-simple-fps-weapon-system/addons/PlayerCharacter/Scenes/PlayerCharacterScene.tscn" id="1_07h0i"]
+[ext_resource type="Material" uid="uid://bu7tj6ka05jwg" path="res://godot-simple-fps-weapon-system/addons/Arts/Materials/StructureMaterial1.tres" id="2_bi2w1"]
+[ext_resource type="Material" uid="uid://cgn7do4y8jc0o" path="res://godot-simple-fps-weapon-system/addons/Arts/Materials/StructureMaterial2.tres" id="3_3spjh"]
+[ext_resource type="PackedScene" uid="uid://pjv5ptit5tvg" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scenes/AmmoRefillerScene.tscn" id="4_qmrtm"]
+[ext_resource type="Script" uid="uid://bnwoh7ph255km" path="res://godot-simple-fps-weapon-system/addons/Maps/Scripts/SpawnerManagerScript.gd" id="5_r8qas"]
+[ext_resource type="Script" uid="uid://c8a2kystypxdm" path="res://godot-simple-fps-weapon-system/addons/Targets/Scripts/ShootingRangeTargetManagerScript.gd" id="6_nmj7y"]
+[ext_resource type="PackedScene" uid="uid://cjhibfe5567xa" path="res://godot-simple-fps-weapon-system/addons/Targets/Scenes/ShootingRangeTargetScene.tscn" id="7_wwbpl"]
+[ext_resource type="PackedScene" uid="uid://d27xhk2ygjsbr" path="res://godot-simple-fps-weapon-system/addons/Targets/Scenes/HitableBoxScene.tscn" id="8_2mjpe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_atpwd"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -266,6 +266,7 @@ shadow_enabled = true
 
 [node name="ShootingRangeTargetManager" type="Node3D" parent="."]
 script = ExtResource("6_nmj7y")
+restartShootingRangeAction = "restartShootingRange"
 
 [node name="ShootingRangeTarget" parent="ShootingRangeTargetManager" instance=ExtResource("7_wwbpl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.385, -52)

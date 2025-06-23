@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf1nbn3eqdof8"
-path="res://.godot/imported/BulletHoleDecal.png-6f42066c913e5757391dce3d7b915fa9.ctex"
+path="res://.godot/imported/BulletHoleDecal.png-1921dc2d1e6b0aee5122eb194c7bf506.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Weapons/Images/BulletHoleDecal.png"
-dest_files=["res://.godot/imported/BulletHoleDecal.png-6f42066c913e5757391dce3d7b915fa9.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Images/BulletHoleDecal.png"
+dest_files=["res://.godot/imported/BulletHoleDecal.png-1921dc2d1e6b0aee5122eb194c7bf506.ctex"]
 
 [params]
 

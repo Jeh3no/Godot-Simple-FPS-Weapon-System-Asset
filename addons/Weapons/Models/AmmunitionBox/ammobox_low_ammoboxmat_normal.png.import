@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcas30smn5n67"
-path.s3tc="res://.godot/imported/ammobox_low_ammoboxmat_normal.png-7dff528e47f8479b186ca4c3129c4241.s3tc.ctex"
+path.s3tc="res://.godot/imported/ammobox_low_ammoboxmat_normal.png-ae848e1926ccd64b2ab2567b4aa4f6f6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://addons/Weapons/Models/AmmunitionBox/ammobox_low_ammoboxmat_normal.png"
-dest_files=["res://.godot/imported/ammobox_low_ammoboxmat_normal.png-7dff528e47f8479b186ca4c3129c4241.s3tc.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/AmmunitionBox/ammobox_low_ammoboxmat_normal.png"
+dest_files=["res://.godot/imported/ammobox_low_ammoboxmat_normal.png-ae848e1926ccd64b2ab2567b4aa4f6f6.s3tc.ctex"]
 
 [params]
 

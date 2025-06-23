@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jwucel52ti1u"
-path="res://.godot/imported/Crosshair.png-0a87b4824bf18c8e6a30d881e1ead75b.ctex"
+path="res://.godot/imported/Crosshair.png-b1b4ad30fa8b95ca13a90191fc04105a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Weapons/Images/Crosshair.png"
-dest_files=["res://.godot/imported/Crosshair.png-0a87b4824bf18c8e6a30d881e1ead75b.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Images/Crosshair.png"
+dest_files=["res://.godot/imported/Crosshair.png-b1b4ad30fa8b95ca13a90191fc04105a.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://chwkmedxwac64"
-path="res://.godot/imported/bat_2.fbx-ca2def2369b64246bfe1e554edcd6708.scn"
+uid="uid://cma3nyxdt633h"
+path="res://.godot/imported/bat_2.fbx-32b4f8c76957e581bbef65ba1e74e009.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Melee/Bats/Bat2/bat_2.fbx"
-dest_files=["res://.godot/imported/bat_2.fbx-ca2def2369b64246bfe1e554edcd6708.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Melee/Bats/Bat2/bat_2.fbx"
+dest_files=["res://.godot/imported/bat_2.fbx-32b4f8c76957e581bbef65ba1e74e009.scn"]
 
 [params]
 

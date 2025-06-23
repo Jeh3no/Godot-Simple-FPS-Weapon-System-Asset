@@ -12,11 +12,11 @@ var bodiesList : Array = []
 @onready var hitbox = $Hitbox
 
 @export_group("Sound variables")
-@onready var audioManager : PackedScene = preload("res://addons/Misc/Scenes/AudioManagerScene.tscn")
+@onready var audioManager : PackedScene = preload("res://godot-simple-fps-weapon-system/addons/Misc/Scenes/AudioManagerScene.tscn")
 @export var explosionSound : AudioStream
 
 @export_group("Particles variables")
-@onready var particlesManager : PackedScene = preload("res://addons/Misc/Scenes/ParticlesManagerScene.tscn")
+@onready var particlesManager : PackedScene = preload("res://godot-simple-fps-weapon-system/addons/Misc/Scenes/ParticlesManagerScene.tscn")
 
 func _process(delta):
 	if timeBeforeVanish > 0.0: timeBeforeVanish -= delta

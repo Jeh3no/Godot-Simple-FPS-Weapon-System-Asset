@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbr0w1ctijpoj"
-path.s3tc="res://.godot/imported/Material.004_baseColor.png-c6a2301099671cd1c4930d95f0dc09fb.s3tc.ctex"
+path.s3tc="res://.godot/imported/Material.004_baseColor.png-65310edfee7e0b5ec5e28c46c191dace.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/Targets/Models/ShootingRangeTarget/textures/Material.004_baseColor.png"
-dest_files=["res://.godot/imported/Material.004_baseColor.png-c6a2301099671cd1c4930d95f0dc09fb.s3tc.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Targets/Models/ShootingRangeTarget/textures/Material.004_baseColor.png"
+dest_files=["res://.godot/imported/Material.004_baseColor.png-65310edfee7e0b5ec5e28c46c191dace.s3tc.ctex"]
 
 [params]
 

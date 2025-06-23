@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://58debnfo3nq7"
-path="res://.godot/imported/machine_gun_3.fbx-8eec2fcc79cb2c99474c14928ecd5fb6.scn"
+uid="uid://kh33qpu164pu"
+path="res://.godot/imported/machine_gun_3.fbx-3876143e698b2ef336a564b89f52510b.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Guns/MachineGuns/MachineGun3/machine_gun_3.fbx"
-dest_files=["res://.godot/imported/machine_gun_3.fbx-8eec2fcc79cb2c99474c14928ecd5fb6.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Guns/MachineGuns/MachineGun3/machine_gun_3.fbx"
+dest_files=["res://.godot/imported/machine_gun_3.fbx-3876143e698b2ef336a564b89f52510b.scn"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnbuc28vfls66"
-path="res://.godot/imported/icon.svg-d426f1132ded078c29a55330e378d207.ctex"
+path="res://.godot/imported/icon.svg-8200bf6bf8b2cffafc694ff2c2c6104f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Arts/Images/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-d426f1132ded078c29a55330e378d207.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Arts/Images/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-8200bf6bf8b2cffafc694ff2c2c6104f.ctex"]
 
 [params]
 

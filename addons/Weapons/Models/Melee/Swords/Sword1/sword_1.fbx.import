@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cyqvc5hec1sog"
-path="res://.godot/imported/sword_1.fbx-f02f46968b01e7afa9fe1e15f3f4458d.scn"
+uid="uid://cvk70ogg64y74"
+path="res://.godot/imported/sword_1.fbx-0360b772f817f80e000680ee0f1e15dd.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Melee/Swords/Sword1/sword_1.fbx"
-dest_files=["res://.godot/imported/sword_1.fbx-f02f46968b01e7afa9fe1e15f3f4458d.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Melee/Swords/Sword1/sword_1.fbx"
+dest_files=["res://.godot/imported/sword_1.fbx-0360b772f817f80e000680ee0f1e15dd.scn"]
 
 [params]
 

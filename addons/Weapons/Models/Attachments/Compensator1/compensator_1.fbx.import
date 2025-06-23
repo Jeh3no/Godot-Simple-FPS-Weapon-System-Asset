@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dqvw1dip2ttpq"
-path="res://.godot/imported/compensator_1.fbx-8c8de50c621cdead25fd483d59c287c2.scn"
+uid="uid://cftus6mtvqueu"
+path="res://.godot/imported/compensator_1.fbx-d1532b26d433a67a66def9bc61d9c034.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Attachments/Compensator1/compensator_1.fbx"
-dest_files=["res://.godot/imported/compensator_1.fbx-8c8de50c621cdead25fd483d59c287c2.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Compensator1/compensator_1.fbx"
+dest_files=["res://.godot/imported/compensator_1.fbx-d1532b26d433a67a66def9bc61d9c034.scn"]
 
 [params]
 

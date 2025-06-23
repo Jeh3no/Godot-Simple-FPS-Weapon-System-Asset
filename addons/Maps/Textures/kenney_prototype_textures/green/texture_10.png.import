@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctjt2siweysid"
-path="res://.godot/imported/texture_10.png-2d8c26c327f9e8d8a281c85dd99f2cd3.ctex"
+path="res://.godot/imported/texture_10.png-7737749172018825dd194ab601bda44b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Maps/Textures/kenney_prototype_textures/green/texture_10.png"
-dest_files=["res://.godot/imported/texture_10.png-2d8c26c327f9e8d8a281c85dd99f2cd3.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Maps/Textures/kenney_prototype_textures/green/texture_10.png"
+dest_files=["res://.godot/imported/texture_10.png-7737749172018825dd194ab601bda44b.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c4kyapxpfb6b8"
-path="res://.godot/imported/rocket_1.fbx-a9c227d523029f3bf2a6bec46741ddd8.scn"
+uid="uid://c1lxdyuht3ohe"
+path="res://.godot/imported/rocket_1.fbx-1fdf88a799d69de62011e1b982356527.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Ammunition/Rocket1/rocket_1.fbx"
-dest_files=["res://.godot/imported/rocket_1.fbx-a9c227d523029f3bf2a6bec46741ddd8.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Ammunition/Rocket1/rocket_1.fbx"
+dest_files=["res://.godot/imported/rocket_1.fbx-1fdf88a799d69de62011e1b982356527.scn"]
 
 [params]
 

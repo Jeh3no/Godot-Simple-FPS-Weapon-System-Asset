@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f2gpch5b7si1"
-path="res://.godot/imported/texture_07.png-ef93bf9b82157fda5e3fcb1ff03446b6.ctex"
+uid="uid://cl64ppvvqicta"
+path="res://.godot/imported/Image3.png-04b5da34ffea72e8ee1225341494f85e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Maps/Textures/kenney_prototype_textures/red/texture_07.png"
-dest_files=["res://.godot/imported/texture_07.png-ef93bf9b82157fda5e3fcb1ff03446b6.ctex"]
+source_file="res://godot-simple-fps-weapon-system/addons/Arts/Images/Image3.png"
+dest_files=["res://.godot/imported/Image3.png-04b5da34ffea72e8ee1225341494f85e.ctex"]
 
 [params]
 

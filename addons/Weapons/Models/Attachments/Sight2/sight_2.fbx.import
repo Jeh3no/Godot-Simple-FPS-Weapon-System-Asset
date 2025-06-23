@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bi0omvavhqiak"
-path="res://.godot/imported/sight_2.fbx-d7f4c688839f32a410ad43f9cc85151c.scn"
+uid="uid://bi4wbbac8888h"
+path="res://.godot/imported/sight_2.fbx-3a1a2afec6f4eae834562614080faaaa.scn"
 
 [deps]
 
-source_file="res://addons/Weapons/Models/Attachments/Sight2/sight_2.fbx"
-dest_files=["res://.godot/imported/sight_2.fbx-d7f4c688839f32a410ad43f9cc85151c.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Sight2/sight_2.fbx"
+dest_files=["res://.godot/imported/sight_2.fbx-3a1a2afec6f4eae834562614080faaaa.scn"]
 
 [params]
 

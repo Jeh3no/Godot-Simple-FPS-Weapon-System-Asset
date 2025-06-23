@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponResource" load_steps=4 format=3 uid="uid://j42d6dl8qkaj"]
 
-[ext_resource type="PackedScene" uid="uid://x8oniabn746q" path="res://addons/Weapons/Scenes/MuzzleFlashParticleScene.tscn" id="1_0bp1b"]
-[ext_resource type="Script" uid="uid://bnhfyt5sl8jcd" path="res://addons/Weapons/Scripts/WeaponResourcesScript.gd" id="2_0fmbw"]
+[ext_resource type="PackedScene" uid="uid://x8oniabn746q" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scenes/MuzzleFlashParticleScene.tscn" id="1_0bp1b"]
+[ext_resource type="Script" uid="uid://bnhfyt5sl8jcd" path="res://godot-simple-fps-weapon-system/addons/Weapons/Scripts/WeaponResourcesScript.gd" id="2_0fmbw"]
 
 [sub_resource type="Curve" id="Curve_eo1mu"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.097493, 1), 0.0, 0.0, 0, 0, Vector2(0.643454, 0.0704225), 0.0, 0.0, 0, 0, Vector2(1, 0.0492958), 0.0, 0.0, 0, 0]

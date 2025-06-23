@@ -34,8 +34,8 @@ var rng = RandomNumberGenerator.new()
 @onready var ammoManager : Node3D = %AmmunitionManager
 @onready var animPlayer : AnimationPlayer = %AnimationPlayer
 @onready var animManager : Node3D = %AnimationManager
-@onready var audioManager : PackedScene = preload("res://addons/Misc/Scenes/AudioManagerScene.tscn")
-@onready var bulletDecal : PackedScene = preload("res://addons/Weapons/Scenes/BulletDecalScene.tscn")
+@onready var audioManager : PackedScene = preload("res://godot-simple-fps-weapon-system/addons/Misc/Scenes/AudioManagerScene.tscn")
+@onready var bulletDecal : PackedScene = preload("res://godot-simple-fps-weapon-system/addons/Weapons/Scenes/BulletDecalScene.tscn")
 @onready var hud : CanvasLayer = %HUD
 @onready var linkComponent : Node3D = %LinkComponent
 
