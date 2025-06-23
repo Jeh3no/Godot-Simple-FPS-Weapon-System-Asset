@@ -107,28 +107,28 @@ You will need to create a input action in your project for each action, and then
 ### The input actions : 
 
    In the PlayerCharacterScene scene, the PlayerCharacterScript script, attached to the PlayerCharacter node:
+   
+    - moveForwardAction
       
-   - moveForwardAction
-     
-   - moveBackwardAction
-     
-   - moveLeftAction
-     
-   - moveRightAction
-     
-   - runAction
-     
-   - jumpAction
-     
-   - crouchAction
+    - moveBackwardAction
+      
+    - moveLeftAction
+      
+    - moveRightAction
+      
+    - runAction
+      
+    - jumpAction
+      
+    - crouchAction
 
-   In the PlayerCharacterScene scene, the CameraScript script, attached to CameraHolder node:
+   In the PlayerCharacterScene scene, the CameraScript script, attached to the CameraHolder node:
       
-   - mouseModeAction
-   - 
+    - mouseModeAction
+      
    In the TemplateMapScene scene, ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
       
-   - restartShootingRangeAction
+    - restartShootingRangeAction
 
          
 You'll also need to enable the "DamageNumberScript" global script as an autoload.
