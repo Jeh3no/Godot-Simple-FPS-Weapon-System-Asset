@@ -104,7 +104,7 @@ If that's the case, you can simply drag and drop the folders under the "addon" o
 
 You'll need to enable the "DamageNumberScript" global script as an autoload.
 
-For that, go to Project Settings -> Globals -> search the corresponding script, add it to the globals list.
+For that, go to Project Settings -> Globals -> search the corresponding scrip, which location is "Targets -> Scripts -> DamageNumberScript.gd", add it to the globals list.
 
 You'll also need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable.
 
@@ -131,7 +131,18 @@ You'll also need to create a input action in your project for each action, and t
    In the PlayerCharacterScene scene, the CameraScript script, attached to the CameraHolder node:
       
    - mouseModeAction
+
+   In the PlayerCharacterScene scene, the WeaponManager script, attached to the camera node:
       
+   - shootAction
+
+   - reloadAction
+
+   - weaponWheelUpAction
+
+   - weaponWheelDownAction
+
+     
    In the TemplateMapScene scene, ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
       
    - restartShootingRangeAction
