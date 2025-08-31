@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://2mpv12yjsva"
-path="res://.godot/imported/rocket_launcher_1.fbx-f417f50b2d159f8765dd4b2cefb1fbaf.scn"
+path="res://.godot/imported/rocket_launcher_1.fbx-b769fd884e07f8812aecccb97d959a53.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Guns/RocketLaunchers/RocketLauncher1/rocket_launcher_1.fbx"
-dest_files=["res://.godot/imported/rocket_launcher_1.fbx-f417f50b2d159f8765dd4b2cefb1fbaf.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Guns/RocketLaunchers/RocketLauncher1/rocket_launcher_1.fbx"
+dest_files=["res://.godot/imported/rocket_launcher_1.fbx-b769fd884e07f8812aecccb97d959a53.scn"]
 
 [params]
 

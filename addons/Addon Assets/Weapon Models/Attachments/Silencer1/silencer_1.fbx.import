@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cfwjodkfflght"
-path="res://.godot/imported/silencer_1.fbx-bf80fb9338180421a8d8b6e93b792000.scn"
+path="res://.godot/imported/silencer_1.fbx-c13e6fe79eb22fd9659957b98c88c771.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Silencer1/silencer_1.fbx"
-dest_files=["res://.godot/imported/silencer_1.fbx-bf80fb9338180421a8d8b6e93b792000.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Attachments/Silencer1/silencer_1.fbx"
+dest_files=["res://.godot/imported/silencer_1.fbx-c13e6fe79eb22fd9659957b98c88c771.scn"]
 
 [params]
 

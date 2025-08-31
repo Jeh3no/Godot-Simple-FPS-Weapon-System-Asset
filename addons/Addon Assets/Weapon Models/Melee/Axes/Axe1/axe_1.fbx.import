@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bdq3kputm6dne"
-path="res://.godot/imported/axe_1.fbx-2b7e814c0f23815b861dffc479b0cfa0.scn"
+path="res://.godot/imported/axe_1.fbx-e932a448c77299bcc36a2345f378abc4.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Melee/Axes/Axe1/axe_1.fbx"
-dest_files=["res://.godot/imported/axe_1.fbx-2b7e814c0f23815b861dffc479b0cfa0.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Melee/Axes/Axe1/axe_1.fbx"
+dest_files=["res://.godot/imported/axe_1.fbx-e932a448c77299bcc36a2345f378abc4.scn"]
 
 [params]
 

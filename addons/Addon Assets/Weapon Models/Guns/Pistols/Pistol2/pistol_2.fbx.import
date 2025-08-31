@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cv8y0g8avsqgl"
-path="res://.godot/imported/pistol_2.fbx-05c3a704055d8a2c90c0e78ab0feaeaa.scn"
+path="res://.godot/imported/pistol_2.fbx-6c305ab4d4b93472b9227dbf97bf5492.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Guns/Pistols/Pistol2/pistol_2.fbx"
-dest_files=["res://.godot/imported/pistol_2.fbx-05c3a704055d8a2c90c0e78ab0feaeaa.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Guns/Pistols/Pistol2/pistol_2.fbx"
+dest_files=["res://.godot/imported/pistol_2.fbx-6c305ab4d4b93472b9227dbf97bf5492.scn"]
 
 [params]
 

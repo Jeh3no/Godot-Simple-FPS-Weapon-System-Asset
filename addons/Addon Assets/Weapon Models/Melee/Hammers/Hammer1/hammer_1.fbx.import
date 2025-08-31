@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dnb6nwnbcrdun"
-path="res://.godot/imported/hammer_1.fbx-b2bc6ae7647973dcf45608d930c1e9db.scn"
+path="res://.godot/imported/hammer_1.fbx-f76b7c6fff3b725ff91cdf0fe0dc7e05.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Melee/Hammers/Hammer1/hammer_1.fbx"
-dest_files=["res://.godot/imported/hammer_1.fbx-b2bc6ae7647973dcf45608d930c1e9db.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Melee/Hammers/Hammer1/hammer_1.fbx"
+dest_files=["res://.godot/imported/hammer_1.fbx-f76b7c6fff3b725ff91cdf0fe0dc7e05.scn"]
 
 [params]
 

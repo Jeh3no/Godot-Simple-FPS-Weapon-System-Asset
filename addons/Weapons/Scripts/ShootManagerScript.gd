@@ -2,36 +2,37 @@ extends Node3D
 
 var cW #current weapon
 var pointOfCollision : Vector3 = Vector3.ZERO
+var rng : RandomNumberGenerator
 
-@onready var weapM : Node3D = %WeaponManager #weapon manager
+@onready var weaponManager : Node3D = %WeaponManager #weapon manager
 
 func getCurrentWeapon(currWeap):
 	#get current weapon resources
 	cW = currWeap
 	
 func shoot():
-	if cW.canShoot and (
+	if !cW.isShooting and (
 	#magazine isn't empty, and has >= ammo than the number of projectiles required for a shot
 	(cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime)
 	or 
 	#has all ammos in the magazine, and number of ammo is positive
-	(cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0 and
+	(cW.allAmmoInMag and weaponManager.ammoManager.ammoDict[cW.ammoType] > 0 and
 	#has >= ammo than the number of projectiles required for a shot
-	weapM.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime)
-	) and cW.canReload:
-		cW.canShoot = false
+	weaponManager.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime)
+	) and !cW.isReloading:
+		cW.isShooting = true
 		
 		#number of successive shots (for example if 3, the weapon will shot 3 times in a row)
 		for i in range(cW.nbProjShots):
 			#same conditions has before, are checked before every shot
 			if ((cW.totalAmmoInMag > 0 and cW.totalAmmoInMag >= cW.nbProjShotsAtSameTime) 
-			or (cW.allAmmoInMag and weapM.ammoManager.ammoDict[cW.ammoType] > 0) and 
-			weapM.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime):
+			or (cW.allAmmoInMag and weaponManager.ammoManager.ammoDict[cW.ammoType] > 0) and 
+			weaponManager.ammoManager.ammoDict[cW.ammoType] >= cW.nbProjShotsAtSameTime):
 				
-				weapM.weaponSoundManagement(cW.shootSound, cW.shootSoundSpeed)
+				weaponManager.weaponSoundManagement(cW.shootSound, cW.shootSoundSpeed)
 				
 				if cW.shootAnimName != "":
-					weapM.animManager.playModelAnimation("ShootAnim%s" % cW.weaponName, cW.shootAnimSpeed, true)
+					weaponManager.animManager.playAnimation("ShootAnim%s" % cW.weaponName, cW.shootAnimSpeed, true)
 				else:
 					print("%s doesn't have a shoot animation" % cW.weaponName)
 					
@@ -39,7 +40,7 @@ func shoot():
 				#a shotgun shell is constituted of ~ 20 pellets that are spread across the target, 
 				#so 20 projectiles shots at the same time)
 				for j in range(0, cW.nbProjShotsAtSameTime):
-					if cW.allAmmoInMag: weapM.ammoManager.ammoDict[cW.ammoType] -= 1
+					if cW.allAmmoInMag: weaponManager.ammoManager.ammoDict[cW.ammoType] -= 1
 					else: cW.totalAmmoInMag -= 1
 						
 					#get the collision point
@@ -49,17 +50,17 @@ func shoot():
 					if cW.type == cW.types.HITSCAN: hitscanShot(pointOfCollision)
 					elif cW.type == cW.types.PROJECTILE: projectileShot(pointOfCollision)
 					
-				if cW.showMuzzleFlash: weapM.displayMuzzleFlash()
+				if cW.showMuzzleFlash: weaponManager.displayMuzzleFlash()
 				
-				weapM.cameraRecoilHolder.setRecoilValues(cW.baseRotSpeed, cW.targetRotSpeed)
-				weapM.cameraRecoilHolder.addRecoil(cW.recoilVal)
+				weaponManager.cameraRecoilHolder.setRecoilValues(cW.baseRotSpeed, cW.targetRotSpeed)
+				weaponManager.cameraRecoilHolder.addRecoil(cW.recoilVal)
 				
 				await get_tree().create_timer(cW.timeBetweenShots).timeout
 				
 			else:
 				print("Not enought ammunitions to shoot")
 				
-		cW.canShoot = true
+		cW.isShooting = false
 		
 func getCameraPOV():  
 	var camera : Camera3D = %Camera
@@ -94,14 +95,16 @@ func getCameraPOV():
 		return raycastEnd 
 		
 func hitscanShot(pointOfCollisionHitscan : Vector3):
+	rng = RandomNumberGenerator.new()
+	
 	#set up weapon shot sprad 
-	var spread = Vector3(weapM.rng.randf_range(cW.minSpread, cW.maxSpread), weapM.rng.randf_range(cW.minSpread, cW.maxSpread), weapM.rng.randf_range(cW.minSpread, cW.maxSpread))
+	var spread = Vector3(rng.randf_range(cW.minSpread, cW.maxSpread), rng.randf_range(cW.minSpread, cW.maxSpread), rng.randf_range(cW.minSpread, cW.maxSpread))
 	
 	#calculate direction of the hitscan bullet 
-	var hitscanBulletDirection = (pointOfCollisionHitscan - cW.weSl.attackPoint.get_global_transform().origin).normalized()
+	var hitscanBulletDirection = (pointOfCollisionHitscan - cW.weaponSlot.attackPoint.get_global_transform().origin).normalized()
 	
 	#create new intersection space to contain possibe collisions 
-	var newIntersection = PhysicsRayQueryParameters3D.create(cW.weSl.attackPoint.get_global_transform().origin, pointOfCollisionHitscan + spread + hitscanBulletDirection * 2)
+	var newIntersection = PhysicsRayQueryParameters3D.create(cW.weaponSlot.attackPoint.get_global_transform().origin, pointOfCollisionHitscan + spread + hitscanBulletDirection * 2)
 	newIntersection.collide_with_areas = true
 	newIntersection.collide_with_bodies = true 
 	var hitscanBulletCollision = get_world_3d().direct_space_state.intersect_ray(newIntersection)
@@ -124,23 +127,25 @@ func hitscanShot(pointOfCollisionHitscan : Vector3):
 		elif collider.is_in_group("HitableObjects") and collider.has_method("hitscanHit"): 
 			finalDamage = cW.damagePerProj * cW.damageDropoff.sample(pointOfCollisionHitscan.distance_to(global_position) / cW.maxRange)
 			collider.hitscanHit(finalDamage/6.0, hitscanBulletDirection, hitscanBulletCollision.position)
-			weapM.displayBulletHole(colliderPoint, colliderNormal)
+			weaponManager.displayBulletHole(colliderPoint, colliderNormal)
 			
 		else:
-			weapM.displayBulletHole(colliderPoint, colliderNormal)
+			weaponManager.displayBulletHole(colliderPoint, colliderNormal)
 			
 func projectileShot(pointOfCollisionProjectile : Vector3):
+	rng = RandomNumberGenerator.new()
+	
 	#set up weapon shot sprad 
-	var spread = Vector3(weapM.rng.randf_range(cW.minSpread, cW.maxSpread), weapM.rng.randf_range(cW.minSpread, cW.maxSpread), weapM.rng.randf_range(cW.minSpread, cW.maxSpread))
+	var spread = Vector3(rng.randf_range(cW.minSpread, cW.maxSpread), rng.randf_range(cW.minSpread, cW.maxSpread), rng.randf_range(cW.minSpread, cW.maxSpread))
 	
 	#Calculate direction of the projectile
-	var projectileDirection = ((pointOfCollisionProjectile - cW.weSl.attackPoint.get_global_transform().origin).normalized() + spread)
+	var projectileDirection = ((pointOfCollisionProjectile - cW.weaponSlot.attackPoint.get_global_transform().origin).normalized() + spread)
 	
 	#Instantiate projectile
 	var projInstance = cW.projRef.instantiate()
 	
 	#set projectile properties 
-	projInstance.global_transform = cW.weSl.attackPoint.global_transform
+	projInstance.global_transform = cW.weaponSlot.attackPoint.global_transform
 	projInstance.direction = projectileDirection
 	projInstance.damage = cW.damagePerProj
 	projInstance.timeBeforeVanish = cW.projTimeBeforeVanish

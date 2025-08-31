@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://jqvrg8xxeqko"
-path="res://.godot/imported/combined_assets_1.fbx-4c528b9dce88167c88ea918e6c64f146.scn"
+path="res://.godot/imported/combined_assets_1.fbx-5d49133e2e921728301ab8789e58f605.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/CombinedAssets/CombinedAssets1/combined_assets_1.fbx"
-dest_files=["res://.godot/imported/combined_assets_1.fbx-4c528b9dce88167c88ea918e6c64f146.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/CombinedAssets/CombinedAssets1/combined_assets_1.fbx"
+dest_files=["res://.godot/imported/combined_assets_1.fbx-5d49133e2e921728301ab8789e58f605.scn"]
 
 [params]
 

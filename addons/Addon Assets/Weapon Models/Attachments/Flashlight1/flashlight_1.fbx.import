@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dr3ux362waqf0"
-path="res://.godot/imported/flashlight_1.fbx-28d2f40a8897e30b52e6b87e2b79475f.scn"
+path="res://.godot/imported/flashlight_1.fbx-b5538b20489c8d20ea0dc6944e56b035.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Flashlight1/flashlight_1.fbx"
-dest_files=["res://.godot/imported/flashlight_1.fbx-28d2f40a8897e30b52e6b87e2b79475f.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Attachments/Flashlight1/flashlight_1.fbx"
+dest_files=["res://.godot/imported/flashlight_1.fbx-b5538b20489c8d20ea0dc6944e56b035.scn"]
 
 [params]
 

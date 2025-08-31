@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://boqrlf6ox1y76"
-path="res://.godot/imported/machine_gun_6.fbx-816cd44f18f5d3fd29e54afc85b71c93.scn"
+path="res://.godot/imported/machine_gun_6.fbx-88fd548e6119296d05d7fc5181ec4322.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Guns/MachineGuns/MachineGun6/machine_gun_6.fbx"
-dest_files=["res://.godot/imported/machine_gun_6.fbx-816cd44f18f5d3fd29e54afc85b71c93.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Guns/MachineGuns/MachineGun6/machine_gun_6.fbx"
+dest_files=["res://.godot/imported/machine_gun_6.fbx-88fd548e6119296d05d7fc5181ec4322.scn"]
 
 [params]
 

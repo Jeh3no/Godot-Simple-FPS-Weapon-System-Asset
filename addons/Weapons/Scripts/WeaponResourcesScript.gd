@@ -5,7 +5,7 @@ class_name WeaponResource
 @export_group("General variables")
 @export var weaponName : String
 @export var weaponId : int
-var weSl : WeaponSlot
+var weaponSlot : WeaponSlot
 
 @export_group("Type variables")
 enum types
@@ -48,7 +48,7 @@ enum types
 @export var unequipTime : float
 
 @export_group("Shoot variables")
-var canShoot : bool = true 
+var isShooting : bool = false 
 @export var canAutoShoot : bool 
 @export var nbProjShotsAtSameTime : int
 @export var nbProjShots : int
@@ -61,12 +61,11 @@ var canShoot : bool = true
 @export var timeBetweenShots : float 
 
 @export_group("Reload variables")
-var canReload : bool = true
+var isReloading : bool = false
 @export var hasToReload : bool = true
 @export var autoReload : bool = true
-@export var reloadTime : float
-@export var multiPartReload : bool = false
-@export var multiPartReloadTime : float
+@export var nbPartsNeeded : int = 1
+@export var reloadTimePerPart : float
 
 @export_group("Recoil variables")
 @export var baseRotSpeed : float = 0.0

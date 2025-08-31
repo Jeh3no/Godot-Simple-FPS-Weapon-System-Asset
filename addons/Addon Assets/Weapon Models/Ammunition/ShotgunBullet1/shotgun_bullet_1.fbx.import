@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dlpk64cf5glhr"
-path="res://.godot/imported/shotgun_bullet_1.fbx-e3b1cb330b3cd1046e87e8962f117324.scn"
+path="res://.godot/imported/shotgun_bullet_1.fbx-d617891a449d7b543c3c6087daae6efa.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Ammunition/ShotgunBullet1/shotgun_bullet_1.fbx"
-dest_files=["res://.godot/imported/shotgun_bullet_1.fbx-e3b1cb330b3cd1046e87e8962f117324.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Ammunition/ShotgunBullet1/shotgun_bullet_1.fbx"
+dest_files=["res://.godot/imported/shotgun_bullet_1.fbx-d617891a449d7b543c3c6087daae6efa.scn"]
 
 [params]
 

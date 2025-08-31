@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://14n6i44m7q6q"
-path="res://.godot/imported/scope_3.fbx-ef53bc1bb39b4513df37546d11e96ce1.scn"
+path="res://.godot/imported/scope_3.fbx-faae4ad605a06a2d170f95bb693bce15.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Attachments/Scope3/scope_3.fbx"
-dest_files=["res://.godot/imported/scope_3.fbx-ef53bc1bb39b4513df37546d11e96ce1.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Attachments/Scope3/scope_3.fbx"
+dest_files=["res://.godot/imported/scope_3.fbx-faae4ad605a06a2d170f95bb693bce15.scn"]
 
 [params]
 

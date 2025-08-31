@@ -6,17 +6,12 @@ var weaponList : Dictionary = {} #all weapons available in the game (key = weapo
 @export var startWeapons : Array[WeaponSlot] #the weapon the player character will start with
 
 var cW = null #current weapon
-var cWM = null #current weapon model
+var cWModel = null #current weapon model
 var weaponIndex : int = 0
 
 #weapon changes variables
 var canChangeWeapons : bool = true
 var canUseWeapon : bool = true
-
-#reload variable
-var hasToCancelReload : bool = false
-
-var rng = RandomNumberGenerator.new()
 
 @export_group("Keybind variables")
 @export var shoot_action : String
@@ -59,11 +54,11 @@ func initialize():
 					if startWeapon.weaponId == cW.weaponId: 
 						weaponStack.append(cW.weaponId)
 						
-				cW.weSl = weaponSlot #get weapon slot script ref from weapon list (allows to get access to model, attack point, ...)
-				cWM = cW.weSl.model
-				cWM.visible = false
+				cW.weaponSlot = weaponSlot #get weapon slot script ref from weapon list (allows to get access to model, attack point, ...)
+				cWModel = cW.weaponSlot.model
+				cWModel.visible = false
 				
-				forceAttackPointTransformValues(cW.weSl.attackPoint)
+				forceAttackPointTransformValues(cW.weaponSlot.attackPoint)
 				
 				cW.bobPos = cW.position
 				
@@ -77,14 +72,14 @@ func exitWeapon(nextWeapon : int):
 	if nextWeapon != cW.weaponId:
 		canChangeWeapons = false
 		canUseWeapon = false
-		if cW.canShoot: cW.canShoot = false
-		if cW.canReload: cW.canReload = false
+		if cW.isShooting: cW.isShooting = false
+		if cW.isReloading: cW.isReloading = false
 		
 		if cW.unequipAnimName != "":
-			animManager.playModelAnimation("UnequipAnim%s" % cW.weaponName, cW.unequipAnimSpeed, false)
+			animManager.playAnimation("UnequipAnim%s" % cW.weaponName, cW.unequipAnimSpeed, false)
 		await get_tree().create_timer(cW.unequipTime).timeout
 		
-		cWM.visible = false
+		cWModel.visible = false
 		
 		enterWeapon(nextWeapon)
 	
@@ -93,28 +88,28 @@ func enterWeapon(nextWeapon : int):
 	#in this part, the next weapon is enabled (equiped and set up)
 	cW = weaponList[nextWeapon]
 	nextWeapon = 0
-	cWM = cW.weSl.model
-	cWM.visible = true
+	cWModel = cW.weaponSlot.model
+	cWModel.visible = true
 	
 	shootManager.getCurrentWeapon(cW)
 	reloadManager.getCurrentWeapon(cW)
-	animManager.getCurrentWeapon(cW, cWM)
+	animManager.getCurrentWeapon(cW, cWModel)
 	
 	weaponSoundManagement(cW.equipSound, cW.equipSoundSpeed)
 	
 	animPlayer.playback_default_blend_time = cW.animBlendTime
 	
 	if cW.equipAnimName != "":
-		animManager.playModelAnimation("EquipAnim%s" % cW.weaponName, cW.equipAnimSpeed, false)
+		animManager.playAnimation("EquipAnim%s" % cW.weaponName, cW.equipAnimSpeed, false)
 	await get_tree().create_timer(cW.equipTime).timeout
 	
-	if !cW.canShoot: cW.canShoot = true
-	if !cW.canReload: cW.canReload = true
+	if cW.isShooting: cW.isShooting = false
+	if cW.isReloading: cW.isReloading = false
 	canUseWeapon = true
 	canChangeWeapons = true
 	
 func _process(_delta : float):
-	if cW != null and cWM != null and canUseWeapon:
+	if cW != null and cWModel != null and canUseWeapon:
 		weaponInputs()
 		
 		reloadManager.autoReload()
@@ -127,12 +122,12 @@ func weaponInputs():
 	if Input.is_action_just_pressed(reload_action): reloadManager.reload()
 	
 	if Input.is_action_just_pressed(weapon_wheel_up_action):
-		if canChangeWeapons and cW.canShoot and cW.canReload:
+		if canChangeWeapons and !cW.isShooting and !cW.isReloading:
 			weaponIndex = min(weaponIndex + 1, weaponStack.size() - 1) #from first element of weapon stack to last element 
 			changeWeapon(weaponStack[weaponIndex])
 			
 	if Input.is_action_just_pressed(weapon_wheel_down_action):
-		if canChangeWeapons and cW.canShoot and cW.canReload:
+		if canChangeWeapons and !cW.isShooting and !cW.isReloading:
 			weaponIndex = max(weaponIndex - 1, 0) #from last element of weapon stack to first element 
 			changeWeapon(weaponStack[weaponIndex])
 		
@@ -143,7 +138,7 @@ func displayStats():
 	hud.displayTotalAmmo(ammoManager.ammoDict[cW.ammoType], cW.nbProjShotsAtSameTime)
 	
 func changeWeapon(nextWeapon : int):
-	if canChangeWeapons and cW.canShoot and cW.canReload:
+	if canChangeWeapons and !cW.isShooting and !cW.isReloading:
 		exitWeapon(nextWeapon)
 	else:
 		push_error("Can't change weapon now")
@@ -154,7 +149,7 @@ func displayMuzzleFlash():
 	if cW.muzzleFlashRef != null:
 		var muzzleFlashInstance = cW.muzzleFlashRef.instantiate()
 		add_child(muzzleFlashInstance)
-		muzzleFlashInstance.global_position = cW.weSl.muzzleFlashSpawner.global_position
+		muzzleFlashInstance.global_position = cW.weaponSlot.muzzleFlashSpawner.global_position
 		muzzleFlashInstance.emitting = true
 	else:
 		push_error("%s doesn't have a muzzle flash reference" % cW.weaponName)
@@ -174,7 +169,7 @@ func weaponSoundManagement(soundName : AudioStream, soundSpeed : float):
 	#makes sure the node is in the scene tree
 	await get_tree().process_frame
 	if audioIns.is_inside_tree():
-		audioIns.global_transform = cW.weSl.attackPoint.global_transform
+		audioIns.global_transform = cW.weaponSlot.attackPoint.global_transform
 		audioIns.bus = "Sfx"
 		audioIns.pitch_scale = soundSpeed
 		audioIns.stream = soundName

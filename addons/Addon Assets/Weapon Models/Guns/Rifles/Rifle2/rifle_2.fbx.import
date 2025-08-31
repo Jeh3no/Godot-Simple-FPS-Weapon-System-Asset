@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://g7nyu5wnv8nr"
-path="res://.godot/imported/rifle_2.fbx-54fc8a8d486c13608eda60d6e8d3f8df.scn"
+path="res://.godot/imported/rifle_2.fbx-ddf87487e74c4b1d1e3ded3c016c9679.scn"
 
 [deps]
 
-source_file="res://godot-simple-fps-weapon-system/addons/Weapons/Models/Guns/Rifles/Rifle2/rifle_2.fbx"
-dest_files=["res://.godot/imported/rifle_2.fbx-54fc8a8d486c13608eda60d6e8d3f8df.scn"]
+source_file="res://godot-simple-fps-weapon-system/addons/Addon Assets/Weapon Models/Guns/Rifles/Rifle2/rifle_2.fbx"
+dest_files=["res://.godot/imported/rifle_2.fbx-ddf87487e74c4b1d1e3ded3c016c9679.scn"]
 
 [params]
 
