@@ -6,7 +6,7 @@ While the asset is under MIT Licence, the weapons models and textures who are pr
 # Godot Simple FPS Weapon System Asset
 
 
- A simple yet complete FPS weapon system asset for Godot 4
+ A simple yet complete FPS weapon system asset made in Godot 4.
 
  ![Asset logo](https://github.com/Jeh3no/Godot-Simple-FPS-Weapon-System-Asset/blob/main/addons/Arts/Images/Image5.png)
 
