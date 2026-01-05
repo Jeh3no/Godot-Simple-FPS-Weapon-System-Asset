@@ -2,82 +2,82 @@ extends State
 
 class_name IdleState
 
-var stateName : String = "Idle"
+var state_name : String = "Idle"
 
-var cR : CharacterBody3D
+var cr : CharacterBody3D
 
-func enter(charRef : CharacterBody3D):
+func enter(char_ref : CharacterBody3D):
 	#pass play char reference
-	cR = charRef
+	cr = char_ref
 	
 	verifications()
 	
 func verifications():
 	#manage the appliements that need to be set at the start of the state
-	cR.floor_snap_length = 1.0
-	if cR.jumpCooldown > 0.0: cR.jumpCooldown = -1.0
-	if cR.nbJumpsInAirAllowed < cR.nbJumpsInAirAllowedRef: cR.nbJumpsInAirAllowed = cR.nbJumpsInAirAllowedRef
-	if cR.coyoteJumpCooldown < cR.coyoteJumpCooldownRef: cR.coyoteJumpCooldown = cR.coyoteJumpCooldownRef
+	cr.floor_snap_length = 1.0
+	if cr.jump_cooldown > 0.0: cr.jump_cooldown = -1.0
+	if cr.nb_jumps_in_air_allowed < cr.nb_jumps_in_air_allowed_ref: cr.nb_jumps_in_air_allowed = cr.nb_jumps_in_air_allowed_ref
+	if cr.coyote_jump_cooldown < cr.coyote_jump_cooldown_ref: cr.coyote_jump_cooldown = cr.coyote_jump_cooldown_ref
 	
 func physics_update(delta : float):
-	checkIfFloor()
+	check_if_floor()
 	
 	applies(delta)
 	
-	cR.gravityApply(delta)
+	cr.gravity_apply(delta)
 	
-	inputManagement()
+	input_management()
 	
 	move(delta)
 	
-func checkIfFloor():
+func check_if_floor():
 	#manage the appliements and state transitions that needs to be sets/checked/performed
 	#every time the play char pass through one of the following : floor-inair-onwall
-	if !cR.is_on_floor() and !cR.is_on_wall():
-		transitioned.emit(self, "InairState")
-	if cR.is_on_floor():
-		if cR.jumpBuffOn: 
-			cR.bufferedJump = true
-			cR.jumpBuffOn = false
-			transitioned.emit(self, "JumpState")
+	if !cr.is_on_floor() and !cr.is_on_wall():
+		transitioned.emit(self, "_inair_state")
+	if cr.is_on_floor():
+		if cr.jump_buff_on:
+			cr.buffered_jump = true
+			cr.jump_buff_on = false
+			transitioned.emit(self, "_jump_state")
 			
 func applies(delta : float):
 	#manage the appliements of things that needs to be set/checked/performed every frame
-	if cR.hitGroundCooldown > 0.0: cR.hitGroundCooldown -= delta
+	if cr.hit_ground_cooldown > 0.0: cr.hit_ground_cooldown -= delta
 	
-	cR.hitbox.shape.height = lerp(cR.hitbox.shape.height, cR.baseHitboxHeight, cR.heightChangeSpeed * delta)
-	cR.model.scale.y = lerp(cR.model.scale.y, cR.baseModelHeight, cR.heightChangeSpeed * delta)
+	cr.hitbox.shape.height = lerp(cr.hitbox.shape.height, cr.base_hitbox_height, cr.height_change_speed * delta)
+	cr.model.scale.y = lerp(cr.model.scale.y, cr.base_model_height, cr.height_change_speed * delta)
 	
-func inputManagement():
+func input_management():
 	#manage the state transitions depending on the actions inputs
-	if Input.is_action_just_pressed(cR.jumpAction):
-		transitioned.emit(self, "JumpState")
+	if Input.is_action_just_pressed(cr.jumpAction):
+		transitioned.emit(self, "_jump_state")
 		
-	if Input.is_action_just_pressed(cR.crouchAction):
-		transitioned.emit(self, "CrouchState")
+	if Input.is_action_just_pressed(cr.crouchAction):
+		transitioned.emit(self, "_crouch_state")
 		
-	if Input.is_action_just_pressed(cR.runAction):
-		if cR.walkOrRun == "WalkState": cR.walkOrRun = "RunState"
-		elif cR.walkOrRun == "RunState": cR.walkOrRun = "WalkState"
+	if Input.is_action_just_pressed(cr.runAction):
+		if cr.walk_or_run == "_walk_state": cr.walk_or_run = "_run_state"
+		elif cr.walk_or_run == "_run_state": cr.walk_or_run = "_walk_state"
 		
 func move(delta : float):
 	#manage the character movement
 	
 	#direction input
-	cR.inputDirection = Input.get_vector(cR.moveLeftAction, cR.moveRightAction, cR.moveForwardAction, cR.moveBackwardAction)
+	cr.input_direction = Input.get_vector(cr.moveLeftAction, cr.move_right_action, cr.move_forward_action, cr.move_backward_action)
 	#get the move direction depending on the input
-	cR.moveDirection = (cR.camHolder.global_basis * Vector3(cR.inputDirection.x, 0.0, cR.inputDirection.y)).normalized()
+	cr.move_direction = (cr.camHolder.global_basis * Vector3(cr.input_direction.x, 0.0, cr.input_direction.y)).normalized()
 	
-	if cR.moveDirection and cR.is_on_floor():
+	if cr.move_direction and cr.is_on_floor():
 		#transition to corresponding state
-		transitioned.emit(self, cR.walkOrRun)
+		transitioned.emit(self, cr.walk_or_run)
 	else:
 		#apply smooth stop 
-		cR.velocity.x = lerp(cR.velocity.x, 0.0, cR.moveDeccel * delta)
-		cR.velocity.z = lerp(cR.velocity.z, 0.0, cR.moveDeccel * delta)
+		cr.velocity.x = lerp(cr.velocity.x, 0.0, cr.move_deccel * delta)
+		cr.velocity.z = lerp(cr.velocity.z, 0.0, cr.move_deccel * delta)
 		
 		#cancel desired move speed accumulation if the timer has elapsed (is up)
-		if cR.hitGroundCooldown <= 0: cR.desiredMoveSpeed = cR.velocity.length()
+		if cr.hit_ground_cooldown <= 0: cr.desired_move_speed = cr.velocity.length()
 		
 	#set to ensure the character don't exceed the max speed authorized
-	if cR.desiredMoveSpeed >= cR.maxSpeed: cR.desiredMoveSpeed = cR.maxSpeed
+	if cr.desired_move_speed >= cr.max_speed: cr.desired_move_speed = cr.max_speed

@@ -10,3 +10,9 @@ func ammoRefillLink(ammoDict : Dictionary):
 			#1 : 
 			var nbAmmoToRefill : int = min(ammoManager.maxNbPerAmmoDict[key] - ammoManager.ammoDict[key], ammoDict[key])
 			ammoManager.ammoDict[key] += nbAmmoToRefill
+
+
+
+
+
+
