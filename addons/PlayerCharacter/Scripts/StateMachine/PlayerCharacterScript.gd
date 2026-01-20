@@ -118,8 +118,9 @@ func modifyPhysicsProperties():
 func gravityApply(delta : float):
 	#if play char goes up, apply jump gravity
 	#otherwise, apply fall gravity
-	if velocity.y >= 0.0: velocity.y += jumpGravity * delta
-	elif velocity.y < 0.0: velocity.y += fallGravity * delta
+	if !is_on_floor():
+		if velocity.y >= 0.0: velocity.y += jumpGravity * delta
+		elif velocity.y < 0.0: velocity.y += fallGravity * delta
 		
 		
 		

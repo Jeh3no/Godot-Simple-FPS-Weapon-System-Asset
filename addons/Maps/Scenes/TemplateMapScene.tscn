@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwqrfifgj21e"]
+[gd_scene load_steps=12 format=3 uid="uid://bwqrfifgj21e"]
 
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://godot-simple-fps-weapon-system/addons/PlayerCharacter/Scenes/PlayerCharacterScene.tscn" id="1_07h0i"]
 [ext_resource type="Material" uid="uid://bu7tj6ka05jwg" path="res://godot-simple-fps-weapon-system/addons/Arts/Materials/StructureMaterial1.tres" id="2_bi2w1"]
@@ -8,8 +8,6 @@
 [ext_resource type="Script" uid="uid://c8a2kystypxdm" path="res://godot-simple-fps-weapon-system/addons/Targets/Scripts/ShootingRangeTargetManagerScript.gd" id="6_nmj7y"]
 [ext_resource type="PackedScene" uid="uid://cjhibfe5567xa" path="res://godot-simple-fps-weapon-system/addons/Targets/Scenes/ShootingRangeTargetScene.tscn" id="7_wwbpl"]
 [ext_resource type="PackedScene" uid="uid://d27xhk2ygjsbr" path="res://godot-simple-fps-weapon-system/addons/Targets/Scenes/HitableBoxScene.tscn" id="8_2mjpe"]
-[ext_resource type="Script" uid="uid://xvskh7wq4if7" path="res://godot-simple-fps-weapon-system/naming_convention_converter_script.gd" id="9_vc5kj"]
-[ext_resource type="Script" uid="uid://cnpa03x4ajc8b" path="res://godot-simple-fps-weapon-system/addons/PlayerCharacter/Scripts/Misc/LinkComponentScript.gd" id="10_pshel"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_atpwd"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -382,5 +380,3 @@ mass = 1.2
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.111524, 1.43224, -30.1397)
 
 [node name="NamingConventionConverter" type="Node" parent="."]
-script = ExtResource("9_vc5kj")
-target_script = ExtResource("10_pshel")

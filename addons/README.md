@@ -101,12 +101,8 @@ If that's the case, you can simply drag and drop the folders under the "addon" o
 
 
 ### Once the files are downloaded and placed in the project :
-
-You'll need to enable the "DamageNumberScript" global script as an autoload.
-
-For that, go to Project Settings -> Globals -> search the corresponding script, which location is "Targets -> Scripts -> DamageNumberScript.gd", add it to the globals list.
-
-You'll also need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable.
+	
+You'll need to create a input action in your project for each action, and then type the exact same name into the corresponding input action variable.
 
 (for example : name your move forward action "moveForward", and then type "moveForward" into the variable "moveForwardAction").
 
@@ -115,25 +111,25 @@ You'll also need to create a input action in your project for each action, and t
    In the PlayerCharacterScene scene, the PlayerCharacterScript script, attached to the PlayerCharacter node:
    
    - moveForwardAction
-     
+	 
    - moveBackwardAction
-     
+	 
    - moveLeftAction
-     
+	 
    - moveRightAction
-     
+	 
    - runAction
-     
+	 
    - jumpAction
-     
+	 
    - crouchAction
 
    In the PlayerCharacterScene scene, the CameraScript script, attached to the CameraHolder node:
-      
+	  
    - mouseModeAction
 
    In the PlayerCharacterScene scene, the WeaponManager script, attached to the camera node:
-      
+	  
    - shootAction
 
    - reloadAction
@@ -142,9 +138,9 @@ You'll also need to create a input action in your project for each action, and t
 
    - weaponWheelDownAction
 
-     
+	 
    In the TemplateMapScene scene, ShootingRangeTargetManagerScript script, attached to the ShootingRangeTargetManager node:
-      
+	  
    - restartShootingRangeAction
 
 ## How to create and add a new weapon to the weapon manager :
@@ -202,4 +198,3 @@ Here's the folders where the content is located :
 -Weapons/Models
 
 -Weapons/Textures
-
