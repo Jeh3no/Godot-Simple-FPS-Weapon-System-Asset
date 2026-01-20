@@ -172,6 +172,9 @@ You'll need to create a input action in your project for each action, and then t
 
 ! About the display of damage number, there are some tremendous errors with it, that i don't understand, and i didn't manage to resolve it, so i've put an option to disable it, so that you don't see theses errors (which don't affect gameplay  in any way, i might add, but i preferred to add an option to not trigger them).
 
+## About the window :
+If you plan to test your game in fullscreen mdoe, don't forget to set the stretch mode to "canvas_items" so that the sub viewport window (the one displaying the weapons on screenà, resize herself to match the screen size.
+
   
 # **Requets**
 
